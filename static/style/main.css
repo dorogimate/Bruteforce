@@ -1,11 +1,10 @@
 body {
   margin: 0;
-  background-color: #152681;
   color: #00fbab;
+  background: url("../images/home_bg.jpeg");
 }
 
 #top-navigation-bar {
-  background-color: #091244;
   color: #00fbab;
   font-family: Calibri, sans-serif;
   position: relative;
@@ -51,7 +50,6 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #091244;
   color: #00fbab;
   font-family: Calibri, sans-serif;
   text-align: center;

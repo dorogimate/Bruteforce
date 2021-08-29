@@ -6,12 +6,12 @@ $fontFamily: Calibri, sans-serif;
 
 body {
   margin: 0;
-  background-color: $bgContentColor;
   color: $greenTextColor;
+  background: url("../images/home_bg.jpeg");
 }
 
 #top-navigation-bar {
-  background-color: $bgColor;
+  //background-color: $bgColor;
   color: $greenTextColor;
   font-family: $fontFamily;
   position: relative;
@@ -57,7 +57,7 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: $bgColor;
+  //background-color: $bgColor;
   color: $greenTextColor;
   font-family: $fontFamily;
   text-align: center;
