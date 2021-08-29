@@ -3,9 +3,11 @@ const nunjucks = require('nunjucks');
 const app = express();
 nunjucks.configure('templates', {express: app});
 app.set('views', './templates');
+app.use(express.static('static'));
 const port = 8000;
 
 const database = require('./database_common');
+
 
 
 app.get('/', (req, res) => {
