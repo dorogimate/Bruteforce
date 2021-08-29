@@ -1,5 +1,77 @@
-.first {
-  font-size: xxx-large;
-  color: blueviolet;
-  text-align: center;
+$bgColor: #091244;
+$bgContentColor: #152681;
+$greenTextColor: #00fbab;
+$linkHoverColor: white;
+$fontFamily: Calibri, sans-serif;
+
+body {
+  margin: 0;
+  background-color: $bgContentColor;
+  color: $greenTextColor;
 }
+
+#top-navigation-bar {
+  background-color: $bgColor;
+  color: $greenTextColor;
+  font-family: $fontFamily;
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  overflow: scroll;
+  margin-left: auto;
+  margin-right: auto;
+  p {
+    float: left;
+    padding-left: 10px;
+    font-size: 23px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    cursor: default;
+  }
+  a {
+    color: $greenTextColor;
+    float: right;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  a:hover {
+    color: $linkHoverColor;
+    text-decoration: underline;
+  }
+}
+
+#footer {
+  position: relative;
+  vertical-align: bottom;
+  display: inline-block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $bgColor;
+  color: $greenTextColor;
+  font-family: $fontFamily;
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  p i {
+    color: $greenTextColor;
+    size: 30px;
+  }
+  i {
+    color: $greenTextColor;
+    size: 20px;
+    margin-right: 5px;
+  }
+}
+
+

@@ -9,10 +9,13 @@ const port = 8000;
 const database = require('./database_common');
 
 
-
 app.get('/', (req, res) => {
     let firstQueryResult = database.firstQuery;
     return res.render('index.html', {firstQueryResult});
+})
+
+app.get('/main-page', (req, res) => {
+    return res.render('main-page.html');
 })
 
 

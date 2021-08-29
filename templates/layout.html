@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="/style/main.css">
+    <script src="/js/main.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    {% block head %}
+        <title>Main page</title>
+    {% endblock %}
 </head>
 <body>
+    <div id="top-navigation-bar">
+        <p>Bruteforce Analytics</p>
+        <a href="/help">HELP</a>
+        <a href="/settings">SETTINGS</a>
+        <a href="/about-us">ABOUT BA</a>
+        <a href="sign-up">SIGN UP</a>
+        <a href="/login">LOG IN</a>
+    </div>
+    {% block body %}
+    {% endblock %}
+    <div id="footer">
+        <p>Bruteforce Analytics <i class="far fa-copyright"></i></p>
+        <section>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </section>
+    </div>
 
 </body>
 </html>
