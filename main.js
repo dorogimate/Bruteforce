@@ -25,7 +25,7 @@ app.get('/login', (req, res) => {
 
 
 app.post('/login', (req, res) => {
-    database.loginQuery(req.body.email, req.body.password)
+    database.loginQuery(req.body.email, req.body.password);
     return res.render('index.html');
 })
 
