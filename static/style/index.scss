@@ -1,0 +1,34 @@
+@import "main";
+
+div#index-page-intro
+{
+  margin-top: 150px;
+  text-align: center;
+  color: white;
+  h1 {
+    font-size: xxx-large;
+  }
+  p {
+    margin-bottom: 50px;
+  }
+  a {
+    text-decoration: none;
+    color: $greenTextColor;
+    padding: 15px;
+    font-size: 20px;
+    border: solid 2px $greenTextColor;
+    border-radius: 30px;
+    transition: 0.5s;
+  }
+  a:hover {
+    @include linkHoverFormatter;
+    text-decoration: none;
+    font-size: 30px;
+    border: solid 2px white;
+    transition: 0.5s;
+  }
+}
+
+#footer {
+  position: fixed;
+}
