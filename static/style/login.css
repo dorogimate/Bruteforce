@@ -90,39 +90,48 @@ body {
   text-decoration: none;
 }
 
-div#index-page-intro {
-  margin-top: 150px;
+html, body, #login-form-container {
+  height: 75%;
+}
+
+#login-form-container {
+  position: relative;
   text-align: center;
-  color: white;
 }
-div#index-page-intro h1 {
-  font-size: xxx-large;
+
+#login-form {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -9px;
+  font-size: 18px;
 }
-div#index-page-intro p {
-  margin-bottom: 50px;
+#login-form label {
+  margin-top: 45px;
 }
-div#index-page-intro a {
-  text-decoration: none;
+#login-form input {
+  margin-top: 15px;
+  margin-bottom: 35px;
+  width: 30%;
+  height: 22px;
+  border-radius: 4px;
+}
+#login-form input.button {
+  height: 32px;
+  width: 7%;
+  margin-top: 0;
+  margin-bottom: 0;
   color: #00fbab;
-  padding: 15px;
-  font-size: 20px;
-  border: solid 2px #00fbab;
-  border-radius: 30px;
-  transition: 0.5s;
-}
-div#index-page-intro a:hover {
-  color: white;
-  text-decoration: underline;
+  background-color: #2e2e75;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  text-decoration: none;
-  font-size: 30px;
-  border: solid 2px white;
-  transition: 0.5s;
+  padding: 5px;
+  font-size: 18px;
+  border-radius: 4px;
 }
 
 #footer {
   position: fixed;
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=login.css.map */

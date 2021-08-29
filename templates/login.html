@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>Bruteforce Analytics - Main page</title>
+<link rel="stylesheet" href="/style/login.css">
+{% endblock %}
+
+{% block body %}
+<div id="login-form-container">
+    <div id="login-form">
+        <form action="/login" method="post">
+            <label for="email-address">Email address:</label><br>
+            <input type="text" id="email-address" name="email"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" ><br><br>
+            <input class="button" type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
