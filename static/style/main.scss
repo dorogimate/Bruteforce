@@ -1,76 +1,79 @@
-$bgColor: #091244;
-$bgContentColor: #152681;
 $greenTextColor: #00fbab;
 $linkHoverColor: white;
 $fontFamily: Calibri, sans-serif;
 
+@mixin linkFormatter($fontSize, $paddingTopBottom, $paddingSide) {
+  padding: $paddingTopBottom $paddingSide;
+  text-decoration: none;
+  color: $greenTextColor;
+  font-size: $fontSize;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+@mixin linkHoverFormatter() {
+  color: $linkHoverColor;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   color: $greenTextColor;
+  font-family: $fontFamily;
   background: url("../images/home_bg.jpeg");
 }
 
 #top-navigation-bar {
-  //background-color: $bgColor;
-  color: $greenTextColor;
-  font-family: $fontFamily;
-  position: relative;
-  vertical-align: top;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 100%;
   overflow: scroll;
-  margin-left: auto;
-  margin-right: auto;
   p {
     float: left;
     padding-left: 10px;
     font-size: 23px;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
     cursor: default;
   }
   a {
-    color: $greenTextColor;
+    @include linkFormatter(18px, 14px, 30px);
     float: right;
-    text-align: center;
-    padding: 14px 30px;
-    text-decoration: none;
-    font-size: 18px;
-    margin-top: 10px;
   }
   a:hover {
-    color: $linkHoverColor;
-    text-decoration: underline;
+    @include linkHoverFormatter;
   }
 }
 
 #footer {
+  margin-top: 30px;
   position: relative;
-  vertical-align: bottom;
-  display: inline-block;
-  left: 0;
   bottom: 0;
   width: 100%;
-  //background-color: $bgColor;
+  z-index: 1;
+  flex-shrink: 0;
   color: $greenTextColor;
-  font-family: $fontFamily;
   text-align: center;
-  padding-bottom: 15px;
   padding-top: 15px;
+  #footer-company-name {
+    font-size: 18px;
+  }
   p i {
-    color: $greenTextColor;
     size: 30px;
   }
   i {
-    color: $greenTextColor;
-    size: 20px;
-    margin-right: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  section {
+    border-bottom: 1px solid darkgrey;
+    width: 85%;
+    margin: 0 auto 10px;
+  }
+  p {
+    font-size: 12px;
+    a {
+      @include linkFormatter(12px, 14px, 14px);
+    }
+    a:hover {
+      @include linkHoverFormatter;
+    }
   }
 }
 

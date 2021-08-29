@@ -1,69 +1,75 @@
 body {
   margin: 0;
   color: #00fbab;
+  font-family: Calibri, sans-serif;
   background: url("../images/home_bg.jpeg");
 }
 
 #top-navigation-bar {
-  color: #00fbab;
-  font-family: Calibri, sans-serif;
-  position: relative;
-  vertical-align: top;
-  display: inline-block;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 100%;
   overflow: scroll;
-  margin-left: auto;
-  margin-right: auto;
 }
 #top-navigation-bar p {
   float: left;
   padding-left: 10px;
   font-size: 23px;
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
   cursor: default;
 }
 #top-navigation-bar a {
-  color: #00fbab;
-  float: right;
-  text-align: center;
   padding: 14px 30px;
   text-decoration: none;
+  color: #00fbab;
   font-size: 18px;
   margin-top: 10px;
+  cursor: pointer;
+  float: right;
 }
 #top-navigation-bar a:hover {
   color: white;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 #footer {
+  margin-top: 30px;
   position: relative;
-  vertical-align: bottom;
-  display: inline-block;
-  left: 0;
   bottom: 0;
   width: 100%;
+  z-index: 1;
+  flex-shrink: 0;
   color: #00fbab;
-  font-family: Calibri, sans-serif;
   text-align: center;
-  padding-bottom: 15px;
   padding-top: 15px;
 }
+#footer #footer-company-name {
+  font-size: 18px;
+}
 #footer p i {
-  color: #00fbab;
   size: 30px;
 }
 #footer i {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+#footer section {
+  border-bottom: 1px solid darkgrey;
+  width: 85%;
+  margin: 0 auto 10px;
+}
+#footer p {
+  font-size: 12px;
+}
+#footer p a {
+  padding: 14px 14px;
+  text-decoration: none;
   color: #00fbab;
-  size: 20px;
-  margin-right: 5px;
+  font-size: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+#footer p a:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */
