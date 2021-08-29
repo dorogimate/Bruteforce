@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
     return res.render('index.html', {firstQueryResult});
 })
 
+
 app.get('/main-page', (req, res) => {
     return res.render('main-page.html');
 })
