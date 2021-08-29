@@ -18,15 +18,18 @@ const connection = mysql.createConnection({
 
 // How to return the value of the query and make possible to call the function in main.js -> then use its return value
 module.exports.loginQuery = function (username, password) {
-    let currentResult;
     connection.query("SELECT * FROM users WHERE username=? AND password=?", [username, password], function (err, result, fields) {
         if (err) {return err}
         else {
             console.log(result);
-            currentResult = result;
-            return callable(result);
+            return result;
         }
     })
-    return currentResult;
+}
+
+module.exports.signUpQuery = function (username, password) {
+    connection.query("INSERT INTO users (Name, Password) VALUES (?, ?)", [username, password], function (err, result, fields) {
+        if(err) {return err}
+    })
 }
 

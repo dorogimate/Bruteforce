@@ -1,0 +1,30 @@
+@import 'main';
+@import 'login';
+
+html, body, #sign-up-form-container {
+  height: 75%;
+}
+
+
+#sign-up-form-container {
+  @include formContainerCenter;
+}
+
+#sign-up-form {
+  @include formVerticalCenter;
+  padding-bottom: 100px;
+}
+
+
+#footer  {
+  margin-top: 30px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  flex-shrink: 0;
+  color: $greenTextColor;
+  text-align: center;
+  padding-top: 15px;
+}
+

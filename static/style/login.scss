@@ -3,13 +3,12 @@
 html, body, #login-form-container {
   height: 75%;
 }
-
-#login-form-container {
+@mixin formContainerCenter() {
   position: relative;
   text-align: center;
 }
 
-#login-form {
+@mixin formVerticalCenter() {
   position: absolute;
   top: 50%;
   left: 0;
@@ -42,6 +41,15 @@ html, body, #login-form-container {
     border-radius: 4px;
   }
 
+
+}
+
+#login-form-container {
+  @include formContainerCenter;
+}
+
+#login-form {
+  @include formVerticalCenter;
 }
 
 

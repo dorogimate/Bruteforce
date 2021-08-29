@@ -29,4 +29,14 @@ app.post('/login', (req, res) => {
     return res.render('index.html');
 })
 
+app.get('/sign-up', (req, res) => {
+    return res.render('sign-up.html');
+})
+
+
+app.post('sign-up', (req, res) => {
+    database.signUpQuery(req.body.email, req.body.password);
+    return res.render('index.html')
+})
+
 app.listen(port, () =>  console.log(`Server running at: http://localhost:${port}`))

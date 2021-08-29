@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<title>Bruteforce Analytics - Main page</title>
+<link rel="stylesheet" href="/style/sign-up.css">
+{% endblock %}
+
+{% block body %}
+<div id="sign-up-form-container">
+    <div id="sign-up-form">
+        <form action="/sign-up" method="post">
+            <label for="first-name">First name:</label><br>
+            <input type="text" id="first-name" name="first-name"><br>
+            <label for="second-name">Second name:</label><br>
+            <input type="text" id="second-name" name="second-name"><br>
+            <label for="email-address">Email address:</label><br>
+            <input type="text" id="email-address" name="email"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" ><br><br>
+            <label for="password-repeat">Repeat password:</label><br>
+            <input type="password-repeat" id="password-repeat" name="password-repeat" ><br><br>
+            <input class="button" type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
