@@ -227,7 +227,7 @@ html, body, #login-form-container {
 }
 
 html, body, #sign-up-form-container {
-  height: 75%;
+  height: 50%;
 }
 
 #sign-up-form-container {
@@ -242,7 +242,7 @@ html, body, #sign-up-form-container {
   right: 0;
   margin-top: -9px;
   font-size: 18px;
-  padding-bottom: 100px;
+  padding-bottom: 100000px;
 }
 #sign-up-form label {
   margin-top: 45px;
@@ -268,15 +268,7 @@ html, body, #sign-up-form-container {
 }
 
 #footer {
-  margin-top: 30px;
-  position: relative;
   bottom: 0;
-  width: 100%;
-  z-index: 1;
-  flex-shrink: 0;
-  color: #00fbab;
-  text-align: center;
-  padding-top: 15px;
 }
 
 /*# sourceMappingURL=sign-up.css.map */

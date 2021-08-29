@@ -33,3 +33,14 @@ module.exports.signUpQuery = function (username, password) {
     })
 }
 
+function dataListQuery() {
+    connection.query("SELECT * FROM users", function (err, result, fields) {
+        if (err) {return err}
+        else {
+            console.log(result);
+            return result;
+        }
+    })
+}
+
+dataListQuery();

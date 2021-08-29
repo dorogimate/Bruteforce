@@ -34,7 +34,7 @@ app.get('/sign-up', (req, res) => {
 })
 
 
-app.post('sign-up', (req, res) => {
+app.post('/sign-up', (req, res) => {
     database.signUpQuery(req.body.email, req.body.password);
     return res.render('index.html')
 })
