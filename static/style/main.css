@@ -2,74 +2,73 @@ body {
   margin: 0;
   color: #00fbab;
   font-family: Calibri, sans-serif;
-  background: url("../images/home_bg.jpeg");
-}
+  background: url("../images/home_bg.jpeg"); }
 
 #top-navigation-bar {
-  overflow: scroll;
-}
-#top-navigation-bar p {
-  float: left;
-  padding-left: 10px;
-  font-size: 23px;
-  cursor: default;
-}
-#top-navigation-bar a {
-  padding: 14px 30px;
-  text-decoration: none;
-  color: #00fbab;
-  font-size: 18px;
-  margin-top: 10px;
-  cursor: pointer;
-  float: right;
-}
-#top-navigation-bar a:hover {
-  color: white;
-  text-decoration: underline;
-  cursor: pointer;
-}
+  overflow: hidden; }
+  #top-navigation-bar p {
+    float: left;
+    padding-left: 10px;
+    font-size: 23px;
+    cursor: default; }
+  #top-navigation-bar a {
+    padding: 14px 30px;
+    text-decoration: none;
+    color: #00fbab;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+    float: right; }
+  #top-navigation-bar a:hover {
+    text-decoration: none; }
+  #top-navigation-bar a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #00fbab;
+    transform: scaleX(0);
+    text-decoration: none;
+    transition: transform 0.3s ease; }
+  #top-navigation-bar a:hover::before {
+    transform: scaleX(1); }
 
 #footer {
-  margin-top: 30px;
-  position: relative;
   bottom: 0;
   width: 100%;
   z-index: 1;
   flex-shrink: 0;
   color: #00fbab;
   text-align: center;
-  padding-top: 15px;
-}
-#footer #footer-company-name {
-  font-size: 18px;
-}
-#footer p i {
-  size: 30px;
-}
-#footer i {
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-#footer section {
-  border-bottom: 1px solid darkgrey;
-  width: 85%;
-  margin: 0 auto 10px;
-}
-#footer p {
-  font-size: 12px;
-}
-#footer p a {
-  padding: 14px 14px;
-  text-decoration: none;
-  color: #00fbab;
-  font-size: 12px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-#footer p a:hover {
-  color: white;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-/*# sourceMappingURL=main.css.map */
+  padding-top: 15px; }
+  #footer #footer-company-name {
+    font-size: 18px; }
+  #footer p i {
+    size: 30px;
+    color: #00fbab; }
+  #footer i {
+    margin-right: 30px;
+    margin-bottom: 10px;
+    color: #00fbab; }
+  #footer section {
+    border-bottom: 1px solid darkgrey;
+    width: 85%;
+    margin: 0 auto 10px; }
+  #footer p {
+    font-size: 12px; }
+    #footer p a {
+      padding: 14px 14px;
+      text-decoration: none;
+      color: #00fbab;
+      font-size: 12px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: 0.5s;
+      position: relative; }
+    #footer p a:hover {
+      text-decoration: none; }

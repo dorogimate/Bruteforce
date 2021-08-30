@@ -45,8 +45,9 @@ body {
   background: url("../images/home_bg.jpeg");
 }
 
+
 #top-navigation-bar {
-  overflow: scroll;
+  overflow: hidden;
   p {
     float: left;
     padding-left: 10px;
