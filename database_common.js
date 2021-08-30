@@ -21,7 +21,6 @@ module.exports.loginQuery = function (username, password) {
     connection.query("SELECT * FROM users WHERE username=? AND password=?", [username, password], function (err, result, fields) {
         if (err) {return err}
         else {
-            console.log(result);
             return result;
         }
     })
@@ -37,10 +36,7 @@ function dataListQuery() {
     connection.query("SELECT * FROM users", function (err, result, fields) {
         if (err) {return err}
         else {
-            console.log(result);
             return result;
         }
     })
 }
-
-dataListQuery();
