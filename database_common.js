@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-const {loginQuery} = require("./database_common");
+const {loginQuery, signUpQuery} = require("./database_common");
 const {callable} = require("nunjucks/src/tests");
 require('dotenv').config();
 
@@ -16,6 +16,13 @@ const connection = mysql.createConnection({
     database: 'bruteforce'
 });
 
+const userConnection = mysql.createConnection({
+    host: 'skriba.ddns.net',
+    user: 'bruteforce',
+    password: '/@6ueXB6',
+    database: 'userdata'
+});
+
 // How to return the value of the query and make possible to call the function in main.js -> then use its return value
 module.exports.loginQuery = function (username, password) {
     connection.query("SELECT * FROM users WHERE username=? AND password=?", [username, password], function (err, result, fields) {
@@ -26,8 +33,9 @@ module.exports.loginQuery = function (username, password) {
     })
 }
 
-module.exports.signUpQuery = function (username, password) {
-    connection.query("INSERT INTO users (Name, Password) VALUES (?, ?)", [username, password], function (err, result, fields) {
+module.exports.signUpQuery = function (name, email, phone_number, company_name, password) {
+    userConnection.query("INSERT INTO users (name, email, phone_number, company_name, password) VALUES (?, ?, ?, ?, ?)",
+        [name, email, phone_number, company_name, password], function (err, result, fields) {
         if(err) {return err}
     })
 }

@@ -17,6 +17,7 @@
     "nunjucks": "^3.2.3"
   },
   "devDependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0"
   }
 }

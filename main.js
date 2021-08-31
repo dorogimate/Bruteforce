@@ -2,13 +2,14 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 const router = express.Router();
 const app = express();
-//Absolute path?
+//Absolute path? - with linux OS
 nunjucks.configure('./templates', {express: app});
 app.set('views', './templates');
 app.use(express.static('static'));
 const port = 8000;
 
 const database = require('./database_common');
+const password = require('./password');
 const {request} = require("express");
 const bodyParser = require("body-parser");
 
@@ -39,7 +40,12 @@ app.get('/sign-up', (req, res) => {
 
 
 app.post('/sign-up', (req, res) => {
-    database.signUpQuery(req.body.email, req.body.password);
+    // if (database.checkTakenUsername)
+    // if (req.body.password == req.body.passwordRepeat)
+    let currentHashedPassword = password.hashingPassword(req.body.password, 10);
+    currentHashedPassword.then(function(hashedPassword) {
+        database.signUpQuery(req.body.name, req.body.email, req.body.phone, req.body.company, hashedPassword);
+    })
     return res.render('index.html')
 })
 
