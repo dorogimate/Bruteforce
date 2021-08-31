@@ -1,44 +1,53 @@
-@import 'main';
+@import 'main.scss';
 
 html, body, #login-form-container {
   height: 75%;
 }
 @mixin formContainerCenter() {
-  position: relative;
+  margin: 0 auto;
   text-align: center;
 }
 
 @mixin formVerticalCenter() {
   position: absolute;
-  top: 50%;
+  top: 15%;
   left: 0;
   right: 0;
-  margin-top: -9px;
+  //margin-top: -9px;
   font-size: 18px;
 
+
   label {
-    margin-top: 45px;
+    //margin-top: 45px;
+    float: left;
+    font-size: 12px;
   }
 
   input {
-    margin-top: 15px;
+    //margin-top: 1px;
     margin-bottom: 35px;
-    width: 30%;
-    height: 22px;
-    border-radius: 4px;
+    padding: 10px 10px 10px 55px;
+    width: 280px;
+    height: 20px;
+    border-radius: 8px;
+    border-color: $greenTextColor;
+    border-style: solid;
+    background-color: #2d2951;
+    color: white;
+    font-size: 17px;
   }
 
   input.button {
-    height: 32px;
-    width: 7%;
+    height: 40px;
+    width: 345px;
     margin-top: 0;
     margin-bottom: 0;
-    color: $greenTextColor;
-    background-color: #2e2e75;
+    color: black;
+    background-color: $greenTextColor;
     cursor: pointer;
     padding: 5px;
-    font-size: 18px;
-    border-radius: 4px;
+    font-size: 17px;
+    border-radius: 8px;
   }
 
 
@@ -46,13 +55,37 @@ html, body, #login-form-container {
 
 #login-form-container {
   @include formContainerCenter;
+  @include formVerticalCenter;
+  width: 350px;
 }
 
 #login-form {
-  @include formVerticalCenter;
+
 }
 
+#login-form-title {
+  padding-bottom: 15px;
+  border-bottom: 1px solid $greenTextColor;
+  margin-bottom: 20px;
+  color: white;
+}
 
+@mixin formInputImages() {
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-position-y: center;
+}
+
+#email-address {
+  @include formInputImages;
+  background-image: url("../images/input_login_mail.svg");
+}
+
+#password {
+  @include formInputImages;
+  background-image: url("../images/input_login_pass.svg");
+}
 
 #footer {
   position: fixed;
