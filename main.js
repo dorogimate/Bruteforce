@@ -41,12 +41,16 @@ app.get('/sign-up', (req, res) => {
 
 app.post('/sign-up', (req, res) => {
     // if (database.checkTakenUsername)
-    // if (req.body.password == req.body.passwordRepeat)
-    let currentHashedPassword = password.hashingPassword(req.body.password, 10);
-    currentHashedPassword.then(function(hashedPassword) {
-        database.signUpQuery(req.body.name, req.body.email, req.body.phone, req.body.company, hashedPassword);
-    })
-    return res.render('index.html')
+    if (req.body.password !== req.body.passwordRepeat) {
+        return res.render('sign-up.html', {errorMessage: "Passwords not matching!"})
+    } else {
+        let currentHashedPassword = password.hashingPassword(req.body.password, 10);
+        currentHashedPassword.then(function(hashedPassword) {
+            database.signUpQuery(req.body.name, req.body.email, req.body.phone, req.body.company, hashedPassword);
+        })
+        return res.render('index.html')
+    }
+
 })
 
 app.listen(port, () =>  console.log(`Server running at: http://localhost:${port}`))
