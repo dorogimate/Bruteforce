@@ -55,7 +55,7 @@ body {
     cursor: default;
   }
   a {
-    @include linkFormatter(18px, 14px, 30px);
+    @include linkFormatter(13px, 14px, 30px);
     float: right;
   }
   a:hover {
