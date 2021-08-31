@@ -21,7 +21,8 @@ app.get('/', (req, res) => {
 
 
 app.get('/login', (req, res) => {
-    return res.render('login.html');
+    let actualPage = 'login';
+    return res.render('login.html', {actualPage});
 })
 
 app.get('/main-page', (req, res) => {
@@ -34,7 +35,8 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/sign-up', (req, res) => {
-    return res.render('sign-up.html');
+    let actualPage = 'signup';
+    return res.render('sign-up.html',{actualPage});
 })
 
 

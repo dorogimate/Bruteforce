@@ -37,6 +37,8 @@ body {
     transition: transform 0.3s ease; }
   #top-navigation-bar a:hover::before {
     transform: scaleX(1); }
+  #top-navigation-bar .linkSelected {
+    color: white; }
 
 #footer {
   bottom: 0;

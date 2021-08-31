@@ -67,6 +67,9 @@ body {
   a:hover::before {
     @include linkHoverBeforeFormatter
   }
+  .linkSelected {
+    color: white;
+  }
 }
 
 #footer-container {
