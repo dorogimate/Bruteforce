@@ -10,7 +10,7 @@ let username = process.env.MYSQL_USERNAME;
 
 // Now has to set manually your own connection variables -> the above code will be implemented if working
 const connection = mysql.createConnection({
-    host: '192.168.1.45',
+    host: 'skriba.ddns.net',
     user: 'bruteforce',
     password: '/@6ueXB6',
     database: 'bruteforce'
