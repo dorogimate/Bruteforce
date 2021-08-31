@@ -1,0 +1,59 @@
+@import 'main';
+
+html, body, #login-form-container {
+  height: 75%;
+}
+@mixin formContainerCenter() {
+  position: relative;
+  text-align: center;
+}
+
+@mixin formVerticalCenter() {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -9px;
+  font-size: 18px;
+
+  label {
+    margin-top: 45px;
+  }
+
+  input {
+    margin-top: 15px;
+    margin-bottom: 35px;
+    width: 30%;
+    height: 22px;
+    border-radius: 4px;
+  }
+
+  input.button {
+    height: 32px;
+    width: 7%;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $greenTextColor;
+    background-color: #2e2e75;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 4px;
+  }
+
+
+}
+
+#login-form-container {
+  @include formContainerCenter;
+}
+
+#login-form {
+  @include formVerticalCenter;
+}
+
+
+
+#footer {
+  position: fixed;
+}

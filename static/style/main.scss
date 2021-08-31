@@ -1,0 +1,111 @@
+$greenTextColor: #00fbab;
+$linkHoverColor: white;
+$fontFamily: Calibri, sans-serif;
+
+@mixin linkFormatter($fontSize, $paddingTopBottom, $paddingSide) {
+  padding: $paddingTopBottom $paddingSide;
+  text-decoration: none;
+  color: $greenTextColor;
+  font-size: $fontSize;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+}
+
+@mixin linkHoverFormatter() {
+  color: $linkHoverColor;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+@mixin linkBeforeFormatter() {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: $greenTextColor;
+  transform: scaleX(0);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+@mixin linkHoverBeforeFormatter() {
+  transform: scaleX(1);
+}
+
+body {
+  margin: 0;
+  color: $greenTextColor;
+  font-family: $fontFamily;
+  background: url("../images/home_bg.jpeg");
+}
+
+
+#top-navigation-bar {
+  overflow: hidden;
+  p {
+    float: left;
+    padding-left: 10px;
+    font-size: 23px;
+    cursor: default;
+  }
+  a {
+    @include linkFormatter(18px, 14px, 30px);
+    float: right;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  a::before {
+    @include linkBeforeFormatter
+  }
+  a:hover::before {
+    @include linkHoverBeforeFormatter
+  }
+}
+
+#footer-container {
+}
+
+#footer {
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  flex-shrink: 0;
+  color: $greenTextColor;
+  text-align: center;
+  padding-top: 15px;
+  #footer-company-name {
+    font-size: 18px;
+  }
+  p i {
+    size: 30px;
+    color: $greenTextColor;
+  }
+  i {
+    margin-right: 30px;
+    margin-bottom: 10px;
+    color: $greenTextColor;
+  }
+  section {
+    border-bottom: 1px solid darkgrey;
+    width: 85%;
+    margin: 0 auto 10px;
+  }
+  p {
+    font-size: 12px;
+    a {
+      @include linkFormatter(12px, 14px, 14px);
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+

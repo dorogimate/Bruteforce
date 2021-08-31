@@ -1,0 +1,50 @@
+@import 'main.scss';
+
+html, body, #sign-up-form-container {
+}
+
+#sign-up-form-container {
+  width: 100%;
+}
+
+#sign-up-form {
+  text-align: center;
+  overflow: auto;
+  padding-bottom: 100px;
+  margin-bottom: 50px;
+  margin-top: 85px;
+
+  label {
+    margin-top: 45px;
+  }
+
+  input {
+    margin-top: 15px;
+    margin-bottom: 35px;
+    width: 30%;
+    height: 22px;
+    border-radius: 4px;
+  }
+
+  input.button {
+    height: 32px;
+    width: 7%;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $greenTextColor;
+    background-color: #2e2e75;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 4px;
+  }
+}
+
+#footer  {
+  display: inline-block;
+  position: relative;
+  height: 100px;
+  margin-top: -100px;
+  clear: both;
+}
+

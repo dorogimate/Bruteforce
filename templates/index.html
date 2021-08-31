@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main page</title>
-</head>
-<body>
-Hello world!
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>Bruteforce Analytics - Main page</title>
+    <link rel="stylesheet" href="/style/index.css">
+{% endblock %}
+
+{% block body %}
+
+    <div id="index-page-intro">
+        <h1>Welcome to Bruteforce Analytics</h1>
+        <p>Bruteforce is capable to analyse your company performance, <br>
+            propose merger deal, and estimate your worth.</p>
+        <a href="/about-us">Tell me more!</a>
+    </div>
+
+{% endblock %}

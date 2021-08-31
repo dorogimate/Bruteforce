@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style/main.css">
+    <script src="/js/main.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    {% block head %}
+        <title>Main page</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="top-navigation-bar">
+        <p>Bruteforce Analytics</p>
+        <a href="/help">Help</a>
+        <a href="/settings">Settings</a>
+        <a href="/about-us">About us</a>
+        <a href="/sign-up">Sign up</a>
+        <a href="/login">Log in</a>
+    </div>
+    {% block body %}
+    {% endblock %}
+
+    <div id="footer-container">
+        <div id="footer">
+            <p id="footer-company-name">Bruteforce Analytics <i class="far fa-copyright"></i></p>
+            <section>
+                <a href=""><i class="fab fa-facebook"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+            </section>
+            <p>
+                Copyright © 2021 Bruteforce Inc. All rights reserved.
+                <a>Privacy Policy</a>
+                <a>Terms of Use</a>
+                <a>Sales and Refunds</a>
+                <a>Legal</a>
+            </p>
+        </div>
+    </div>
+
+
+</body>
+</html>
