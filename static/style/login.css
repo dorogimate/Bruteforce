@@ -2,18 +2,14 @@ body {
   margin: 0;
   color: #00fbab;
   font-family: Calibri, sans-serif;
-  background: url("../images/home_bg.jpeg");
-}
+  background: url("../images/home_bg.jpeg"); }
 
-#top-navigation-bar {
-  overflow: scroll;
-}
 #top-navigation-bar p {
   float: left;
   padding-left: 10px;
   font-size: 23px;
-  cursor: default;
-}
+  cursor: default; }
+
 #top-navigation-bar a {
   padding: 14px 30px;
   text-decoration: none;
@@ -23,11 +19,11 @@ body {
   cursor: pointer;
   transition: 0.5s;
   position: relative;
-  float: right;
-}
+  float: right; }
+
 #top-navigation-bar a:hover {
-  text-decoration: none;
-}
+  text-decoration: none; }
+
 #top-navigation-bar a::before {
   content: "";
   position: absolute;
@@ -39,65 +35,52 @@ body {
   background-color: #00fbab;
   transform: scaleX(0);
   text-decoration: none;
-  transition: transform 0.3s ease;
-}
+  transition: transform 0.3s ease; }
+
 #top-navigation-bar a:hover::before {
-  transform: scaleX(1);
-}
+  transform: scaleX(1); }
 
 #footer {
-  margin-top: 30px;
-  position: relative;
   bottom: 0;
   width: 100%;
   z-index: 1;
   flex-shrink: 0;
   color: #00fbab;
   text-align: center;
-  padding-top: 15px;
-}
-#footer #footer-company-name {
-  font-size: 18px;
-}
-#footer p i {
-  size: 30px;
-  color: #00fbab;
-}
-#footer i {
-  margin-right: 30px;
-  margin-bottom: 10px;
-  color: #00fbab;
-}
-#footer section {
-  border-bottom: 1px solid darkgrey;
-  width: 85%;
-  margin: 0 auto 10px;
-}
-#footer p {
-  font-size: 12px;
-}
-#footer p a {
-  padding: 14px 14px;
-  text-decoration: none;
-  color: #00fbab;
-  font-size: 12px;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: 0.5s;
-  position: relative;
-}
-#footer p a:hover {
-  text-decoration: none;
-}
+  padding-top: 15px; }
+  #footer #footer-company-name {
+    font-size: 18px; }
+  #footer p i {
+    size: 30px;
+    color: #00fbab; }
+  #footer i {
+    margin-right: 30px;
+    margin-bottom: 10px;
+    color: #00fbab; }
+  #footer section {
+    border-bottom: 1px solid darkgrey;
+    width: 85%;
+    margin: 0 auto 10px; }
+  #footer p {
+    font-size: 12px; }
+    #footer p a {
+      padding: 14px 14px;
+      text-decoration: none;
+      color: #00fbab;
+      font-size: 12px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: 0.5s;
+      position: relative; }
+    #footer p a:hover {
+      text-decoration: none; }
 
 html, body, #login-form-container {
-  height: 75%;
-}
+  height: 75%; }
 
 #login-form-container {
   position: relative;
-  text-align: center;
-}
+  text-align: center; }
 
 #login-form {
   position: absolute;
@@ -105,33 +88,26 @@ html, body, #login-form-container {
   left: 0;
   right: 0;
   margin-top: -9px;
-  font-size: 18px;
-}
-#login-form label {
-  margin-top: 45px;
-}
-#login-form input {
-  margin-top: 15px;
-  margin-bottom: 35px;
-  width: 30%;
-  height: 22px;
-  border-radius: 4px;
-}
-#login-form input.button {
-  height: 32px;
-  width: 7%;
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #00fbab;
-  background-color: #2e2e75;
-  cursor: pointer;
-  padding: 5px;
-  font-size: 18px;
-  border-radius: 4px;
-}
+  font-size: 18px; }
+  #login-form label {
+    margin-top: 45px; }
+  #login-form input {
+    margin-top: 15px;
+    margin-bottom: 35px;
+    width: 30%;
+    height: 22px;
+    border-radius: 4px; }
+  #login-form input.button {
+    height: 32px;
+    width: 7%;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #00fbab;
+    background-color: #2e2e75;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 4px; }
 
 #footer {
-  position: fixed;
-}
-
-/*# sourceMappingURL=login.css.map */
+  position: fixed; }

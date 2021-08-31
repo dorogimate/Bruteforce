@@ -2,7 +2,8 @@ const express = require('express');
 const nunjucks = require('nunjucks');
 const router = express.Router();
 const app = express();
-nunjucks.configure('templates', {express: app});
+//Absolute path?
+nunjucks.configure('./templates', {express: app});
 app.set('views', './templates');
 app.use(express.static('static'));
 const port = 8000;
@@ -23,6 +24,9 @@ app.get('/login', (req, res) => {
     return res.render('login.html');
 })
 
+app.get('/main-page', (req, res) => {
+    return res.render('main-page.html');
+})
 
 app.post('/login', (req, res) => {
     database.loginQuery(req.body.email, req.body.password);

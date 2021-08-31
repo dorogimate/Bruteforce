@@ -10,10 +10,10 @@ let username = process.env.MYSQL_USERNAME;
 
 // Now has to set manually your own connection variables -> the above code will be implemented if working
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'Dorogi',
-    password: 'Matthew98',
-    database: 'Nodejs_test'
+    host: '192.168.1.45',
+    user: 'bruteforce',
+    password: '/@6ueXB6',
+    database: 'bruteforce'
 });
 
 // How to return the value of the query and make possible to call the function in main.js -> then use its return value
