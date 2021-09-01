@@ -112,6 +112,8 @@ html, body, #login-form-container {
     padding: 5px;
     font-size: 17px;
     border-radius: 8px; }
+  #login-form-container input.button:hover {
+    color: white; }
 
 #login-form-title {
   padding-bottom: 15px;

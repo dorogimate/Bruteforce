@@ -143,6 +143,8 @@ body {
     padding: 5px;
     font-size: 18px;
     border-radius: 8px; }
+  #sign-up-form input.button:hover {
+    color: white; }
 
 #footer {
   display: inline-block;
