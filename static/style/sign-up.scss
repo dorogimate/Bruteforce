@@ -1,42 +1,88 @@
 @import 'main.scss';
 
 html, body, #sign-up-form-container {
+
 }
 
 #sign-up-form-container {
-  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  width: 345px;
+}
+
+#signup-form-title {
+  padding-bottom: 15px;
+  border-bottom: 1px solid $greenTextColor;
+  margin-bottom: 20px;
+  color: white;
+}
+
+@mixin formInputImages() {
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-position-y: center;
+}
+
+#name {
+  @include formInputImages;
+  background-image: url("../images/input_signup_name.svg");
+}
+
+#company-name {
+  @include formInputImages;
+  background-image: url("../images/input_signup_company.svg");
+}
+
+#email-address {
+  @include formInputImages;
+  background-image: url("../images/input_login_mail.svg");
+}
+
+#password, #password-repeat {
+  @include formInputImages;
+  background-image: url("../images/input_login_pass.svg");
 }
 
 #sign-up-form {
-  text-align: center;
-  overflow: auto;
+  text-align: left;
+  //overflow: auto;
   padding-bottom: 100px;
   margin-bottom: 50px;
-  margin-top: 85px;
+  //margin-top: 85px;
+  //margin: 0 auto;
 
-  label {
-    margin-top: 45px;
+    label {
+   // margin-top: 45px;
+    font-size: 12px;
   }
 
   input {
-    margin-top: 15px;
-    margin-bottom: 35px;
-    width: 30%;
-    height: 22px;
-    border-radius: 4px;
+    //margin-top: 15px;
+    display: block;
+    margin-bottom: 25px;
+    padding: 10px 10px 10px 55px;
+    width: 280px;
+    height: 20px;
+    border-radius: 8px;
+    border-color: $greenTextColor;
+    border-style: solid;
+    background-color: #2d2951;
+    color: white;
+    font-size: 17px;
   }
 
   input.button {
-    height: 32px;
-    width: 7%;
+    height: 40px;
+    width: 345px;
     margin-top: 0;
     margin-bottom: 0;
-    color: $greenTextColor;
-    background-color: #2e2e75;
+    color: black;
+    background-color: $greenTextColor;
     cursor: pointer;
     padding: 5px;
     font-size: 18px;
-    border-radius: 4px;
+    border-radius: 8px;
   }
 }
 

@@ -76,33 +76,73 @@ body {
       text-decoration: none; }
 
 #sign-up-form-container {
-  width: 100%; }
+  margin: 0 auto;
+  text-align: center;
+  width: 345px; }
+
+#signup-form-title {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #00fbab;
+  margin-bottom: 20px;
+  color: white; }
+
+#name {
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-position-y: center;
+  background-image: url("../images/input_signup_name.svg"); }
+
+#company-name {
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-position-y: center;
+  background-image: url("../images/input_signup_company.svg"); }
+
+#email-address {
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-position-y: center;
+  background-image: url("../images/input_login_mail.svg"); }
+
+#password, #password-repeat {
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-position-y: center;
+  background-image: url("../images/input_login_pass.svg"); }
 
 #sign-up-form {
-  text-align: center;
-  overflow: auto;
+  text-align: left;
   padding-bottom: 100px;
-  margin-bottom: 50px;
-  margin-top: 85px; }
+  margin-bottom: 50px; }
   #sign-up-form label {
-    margin-top: 45px; }
+    font-size: 12px; }
   #sign-up-form input {
-    margin-top: 15px;
-    margin-bottom: 35px;
-    width: 30%;
-    height: 22px;
-    border-radius: 4px; }
+    display: block;
+    margin-bottom: 25px;
+    padding: 10px 10px 10px 55px;
+    width: 280px;
+    height: 20px;
+    border-radius: 8px;
+    border-color: #00fbab;
+    border-style: solid;
+    background-color: #2d2951;
+    color: white;
+    font-size: 17px; }
   #sign-up-form input.button {
-    height: 32px;
-    width: 7%;
+    height: 40px;
+    width: 345px;
     margin-top: 0;
     margin-bottom: 0;
-    color: #00fbab;
-    background-color: #2e2e75;
+    color: black;
+    background-color: #00fbab;
     cursor: pointer;
     padding: 5px;
     font-size: 18px;
-    border-radius: 4px; }
+    border-radius: 8px; }
 
 #footer {
   display: inline-block;
