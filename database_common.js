@@ -33,9 +33,9 @@ module.exports.loginQuery = function (username, password) {
     })
 }
 
-module.exports.signUpQuery = function (name, email, phone_number, company_name, password) {
-    userConnection.query("INSERT INTO users (name, email, phone_number, company_name, password) VALUES (?, ?, ?, ?, ?)",
-        [name, email, phone_number, company_name, password], function (err, result, fields) {
+module.exports.signUpQuery = function (name, email, phone_number, company_name, password, uuid) {
+    userConnection.query("INSERT INTO users (name, email, phone_number, company_name, password, uuid) VALUES (?, ?, ?, ?, ?, ?)",
+        [name, email, phone_number, company_name, password, uuid], function (err, result, fields) {
         if(err) {return err}
     })
 }
