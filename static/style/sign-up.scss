@@ -34,6 +34,11 @@ html, body, #sign-up-form-container {
   background-image: url("../images/input_signup_company.svg");
 }
 
+#phone-number {
+  @include formInputImages;
+  background-image: url("../images/input_signup_phone.svg");
+}
+
 #email-address {
   @include formInputImages;
   background-image: url("../images/input_login_mail.svg");

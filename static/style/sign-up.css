@@ -100,6 +100,13 @@ body {
   background-position-y: center;
   background-image: url("../images/input_signup_company.svg"); }
 
+#phone-number {
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-position-y: center;
+  background-image: url("../images/input_signup_phone.svg"); }
+
 #email-address {
   background-size: 30px;
   background-repeat: no-repeat;
