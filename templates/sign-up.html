@@ -11,18 +11,18 @@
     <div id="sign-up-form">
         <form action="/sign-up" method="post">
             <label for="name">First name:</label><br>
-            <input type="text" id="name" name="name"><br>
+            <input type="text" id="name" name="name" value="{{ initialName }}"><br>
             <label for="email">Email address:</label><br>
-            <input type="text" id="email" name="email"><br>
+            <input type="text" id="email" name="email" value="{{ initialEmail }}"><br>
             <label for="phone">Phone number:</label><br>
-            <input type="number" id="phone" name="phone"><br>
+            <input type="number" id="phone" name="phone" value="{{ initialPhone }}"><br>
             <label for="company">Company name:</label><br>
-            <input type="text" id="company" name="company"><br>
+            <input type="text" id="company" name="company" value="{{ initialCompany }}"><br>
             <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password" ><br>
+            <input type="password" id="password" name="password"><br>
             <label for="passwordRepeat">Repeat password:</label><br>
             <input type="password" id="passwordRepeat" name="passwordRepeat" ><br><br>
-            <p>{{ errorMessage }}</p>
+            <p>{{ notMatchingPasswordsErrorMessage }}</p>
             <input class="button" type="submit" value="Submit">
         </form>
     </div>

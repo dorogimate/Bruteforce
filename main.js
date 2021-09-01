@@ -41,8 +41,13 @@ app.get('/sign-up', (req, res) => {
 
 app.post('/sign-up', (req, res) => {
     // if (database.checkTakenUsername)
-    if (req.body.password !== req.body.passwordRepeat) {
-        return res.render('sign-up.html', {errorMessage: "Passwords not matching!"})
+    let name = req.body.name;
+    let email = req.body.email;
+    let phone = req.body.phone;
+    let company = req.body.company;
+    if (req.body.password !== req.body.passwordRepeat) { //ez JavaScriptel is meg tudnám oldani, össze lehet hozni a backendet és a js-t?
+        return res.render('sign-up.html', {notMatchingPasswordsErrorMessage: "Passwords not matching!",
+            initialName: name, initialEmail: email, initialPhone: phone, initialCompany: company})
     } else {
         let currentHashedPassword = password.hashingPassword(req.body.password, 10);
         currentHashedPassword.then(function(hashedPassword) {
