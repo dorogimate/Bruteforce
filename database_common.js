@@ -27,20 +27,28 @@ const userConnection = mysql.createConnection({
 });
 
 // How to return the value of the query and make possible to call the function in main.js -> then use its return value
-module.exports.loginQuery = function (name, password) {
-    let sql = "SELECT * FROM users WHERE name = ?"
-    userConnection.query(sql, [name], function (err, result, fields) {
+module.exports.loginQuery = function (email, password) {
+    let sql = "SELECT * FROM users WHERE email = ?"
+    userConnection.query(sql, [email], function (err, result, fields) {
         if (err) {return err}
         else {
-            checkPasswordForLogin(password, result[0].password).then(function(isPasswordCorrect) {
-                if (isPasswordCorrect) {
-                    console.log(result);
-                    return result[0];
-                } else {
-                    console.log(null);
-                    return null;
-                }
-            })
+            if (result.length === 0) {
+                console.log(null);
+                return null;
+            }
+            else {
+                checkPasswordForLogin(password, result[0].password).then(function(isPasswordCorrect) {
+                    if (isPasswordCorrect) {
+                        console.log(result[0].phone_number);
+                        return result[0];
+                    } else {
+                        console.log(null);
+                        return null;
+                    }
+                })
+            }
+
+
         }
     })
 }

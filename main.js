@@ -17,8 +17,6 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-    database.loginQuery('aaa', 'aa');
-    database.loginQuery('aaa', 'aaa');
     return res.render('index.html');
 })
 
@@ -27,13 +25,23 @@ app.get('/login', (req, res) => {
     return res.render('login.html');
 })
 
-app.get('/main-page', (req, res) => {
-    return res.render('main-page.html');
-})
 
 app.post('/login', (req, res) => {
     database.loginQuery(req.body.email, req.body.password);
     return res.render('index.html');
+    /* If we will be able to return the result of the query it is a dictionary with all the user data -> can be forwarded e.g. the company name
+    If return value could used code will look like:
+
+    let loginResponse = database.loginQuery(req.body.email, req.body.password)
+    if (loginResponse !== null) {
+        return res.render('dashboard.html', {name: loginResponse.name, email: loginResponse.email,
+                                                          phone: loginResponse.phone_number, company: loginResponse.company_name,
+                                                          uniqueId: loginResponse.uuid})
+    } else {
+        return res.render('login.html', {errorMessage: 'Wrong username or password! Try again!'})
+    }
+
+     */
 })
 
 app.get('/sign-up', (req, res) => {

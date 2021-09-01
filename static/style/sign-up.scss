@@ -49,9 +49,7 @@ html, body, #sign-up-form-container {
 }
 
 .error-message {
-  font-weight: bold;
-  font-size: xx-large;
-  margin-top: 30px;
+  @include errorMessageFormatter;
 }
 
 select {
