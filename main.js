@@ -1,5 +1,6 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
+const session = require("express-session");
 const router = express.Router();
 const app = express();
 //Absolute path? - with linux OS
@@ -13,6 +14,7 @@ const database = require('./database_common');
 const password = require('./password');
 const {request} = require("express");
 const bodyParser = require("body-parser");
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -34,13 +36,17 @@ app.post('/login', (req, res) => {
 
     let loginResponse = database.loginQuery(req.body.email, req.body.password)
     if (loginResponse !== null) {
-        return res.render('dashboard.html', {name: loginResponse.name, email: loginResponse.email,
+        session.user = loginResponse.name;
+        session.email = loginResponse.email;
+        session.phone = loginResponse.phone_number;
+        session.company = loginResponse.company_name;
+        session.uniqueId = loginResponse.uuid;
+        return res.render('dashboard.html'+loginResponse.uuid, {name: loginResponse.name, email: loginResponse.email, --> this part not even needed if session work, however cannot check it currently
                                                           phone: loginResponse.phone_number, company: loginResponse.company_name,
                                                           uniqueId: loginResponse.uuid})
     } else {
         return res.render('login.html', {errorMessage: 'Wrong username or password! Try again!'})
     }
-
      */
 })
 
