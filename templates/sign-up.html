@@ -3,6 +3,7 @@
 {% block head %}
 <title>Bruteforce Analytics - Main page</title>
 <link rel="stylesheet" href="/style/sign-up.css">
+<script src="/js/sign-up.js" defer></script>
 {% endblock %}
 
 {% block body %}
@@ -29,7 +30,12 @@
             <input type="password" id="password" name="password"><br>
             <label for="passwordRepeat">Repeat password:</label><br>
             <input type="password" id="passwordRepeat" name="passwordRepeat" ><br><br>
-            <input class="button" type="submit" value="Submit">
+            <input class="button" id="submitButton" type="submit" value="Submit">
+            <p id="successfulRegistration" class="error-message"></p>
+            <div class="loader-container">
+                <div id="loader" class="loader"></div>
+            </div>
+
         </form>
     </div>
 </div>

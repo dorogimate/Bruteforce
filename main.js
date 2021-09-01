@@ -40,13 +40,10 @@ app.get('/sign-up', (req, res) => {
 
 
 app.post('/sign-up', (req, res) => {
-    // if (database.checkTakenUsername)
     let name = req.body.name;
     let email = req.body.email;
     let phone = req.body.phone;
     let company = req.body.company;
-    console.log(req.body.phonePrefix);
-    console.log(typeof req.body.phonePrefix);
     let checkAllFieldsFulfilled = name === '' || email === '' || phone === '' || company === '' ||
                                   req.body.password === '' || req.body.passwordRepeat === '';
     let checkEmail = !email.includes('@') || !email.includes('.com')
@@ -66,11 +63,12 @@ app.post('/sign-up', (req, res) => {
             currentHashedPassword.then(function(hashedPassword) {
                 database.signUpQuery(name, email, parseInt(phone), company, hashedPassword);
             })
-            return res.render('index.html')
+            setTimeout(function () {
+                return res.render('index.html');
+                }, 4000
+            )
         }
     }
-
-
 
 })
 
