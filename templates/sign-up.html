@@ -10,6 +10,9 @@
 <div id="sign-up-form-container">
     <div id="sign-up-form">
         <form action="/sign-up" method="post">
+            <p class="error-message">{{ notMatchingPasswordsErrorMessage }}</p>
+            <p class="error-message">{{ notAllFieldFulfilledErrorMessage }}</p>
+            <p class="error-message">{{ incorrectEmailFormatErrorMessage }}</p>
             <label for="name">First name:</label><br>
             <input type="text" id="name" name="name" value="{{ initialName }}"><br>
             <label for="email">Email address:</label><br>
@@ -22,7 +25,6 @@
             <input type="password" id="password" name="password"><br>
             <label for="passwordRepeat">Repeat password:</label><br>
             <input type="password" id="passwordRepeat" name="passwordRepeat" ><br><br>
-            <p>{{ notMatchingPasswordsErrorMessage }}</p>
             <input class="button" type="submit" value="Submit">
         </form>
     </div>

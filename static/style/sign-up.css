@@ -97,7 +97,7 @@ body {
   overflow: auto;
   padding-bottom: 100px;
   margin-bottom: 50px;
-  margin-top: 85px;
+  margin-top: 50px;
 }
 #sign-up-form label {
   margin-top: 45px;
@@ -128,6 +128,12 @@ body {
   height: 100px;
   margin-top: -100px;
   clear: both;
+}
+
+.error-message {
+  font-weight: bold;
+  font-size: xx-large;
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=sign-up.css.map */

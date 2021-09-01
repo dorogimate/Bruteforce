@@ -45,16 +45,28 @@ app.post('/sign-up', (req, res) => {
     let email = req.body.email;
     let phone = req.body.phone;
     let company = req.body.company;
-    if (req.body.password !== req.body.passwordRepeat) { //ez JavaScriptel is meg tudnám oldani, össze lehet hozni a backendet és a js-t?
-        return res.render('sign-up.html', {notMatchingPasswordsErrorMessage: "Passwords not matching!",
+    let checkAllFieldsFulfilled = name === '' || email === '' || phone === '' || company === '' ||
+                                  req.body.password === '' || req.body.passwordRepeat === '';
+    if (checkAllFieldsFulfilled) {
+        return res.render('sign-up.html', {notAllFieldFulfilledErrorMessage: "Please fill all fields!",
             initialName: name, initialEmail: email, initialPhone: phone, initialCompany: company})
     } else {
-        let currentHashedPassword = password.hashingPassword(req.body.password, 10);
-        currentHashedPassword.then(function(hashedPassword) {
-            database.signUpQuery(req.body.name, req.body.email, req.body.phone, req.body.company, hashedPassword);
-        })
-        return res.render('index.html')
+        if (!email.includes('@')) {
+            return res.render('sign-up.html', {incorrectEmailFormatErrorMessage: "Please enter valid email address!",
+                initialName: name, initialEmail: email, initialPhone: phone, initialCompany: company})
+        } else if (req.body.password !== req.body.passwordRepeat) { //ez JavaScriptel is meg tudnám oldani, össze lehet hozni a backendet és a js-t?
+            return res.render('sign-up.html', {notMatchingPasswordsErrorMessage: "Passwords not matching!",
+                initialName: name, initialEmail: email, initialPhone: phone, initialCompany: company})
+        } else {
+            let currentHashedPassword = password.hashingPassword(req.body.password, 10);
+            currentHashedPassword.then(function(hashedPassword) {
+                database.signUpQuery(name, email, parseInt(phone), company, hashedPassword);
+            })
+            return res.render('index.html')
+        }
     }
+
+
 
 })
 
