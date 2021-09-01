@@ -136,4 +136,15 @@ body {
   margin-top: 30px;
 }
 
+select {
+  background-color: #03034b;
+  color: white;
+}
+
+input#phone::-webkit-outer-spin-button,
+input#phone::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /*# sourceMappingURL=sign-up.css.map */

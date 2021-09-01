@@ -45,13 +45,17 @@ app.post('/sign-up', (req, res) => {
     let email = req.body.email;
     let phone = req.body.phone;
     let company = req.body.company;
+    console.log(req.body.phonePrefix);
+    console.log(typeof req.body.phonePrefix);
     let checkAllFieldsFulfilled = name === '' || email === '' || phone === '' || company === '' ||
                                   req.body.password === '' || req.body.passwordRepeat === '';
+    let checkEmail = !email.includes('@') || !email.includes('.com')
+
     if (checkAllFieldsFulfilled) {
         return res.render('sign-up.html', {notAllFieldFulfilledErrorMessage: "Please fill all fields!",
             initialName: name, initialEmail: email, initialPhone: phone, initialCompany: company})
     } else {
-        if (!email.includes('@')) {
+        if (checkEmail) {
             return res.render('sign-up.html', {incorrectEmailFormatErrorMessage: "Please enter valid email address!",
                 initialName: name, initialEmail: email, initialPhone: phone, initialCompany: company})
         } else if (req.body.password !== req.body.passwordRepeat) { //ez JavaScriptel is meg tudnám oldani, össze lehet hozni a backendet és a js-t?
