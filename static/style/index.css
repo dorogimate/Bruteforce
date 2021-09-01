@@ -9,7 +9,7 @@ body {
   #top-navigation-bar p {
     float: left;
     padding-left: 10px;
-    font-size: 23px;
+    font-size: 17px;
     cursor: default; }
   #top-navigation-bar a {
     padding: 14px 30px;
@@ -82,26 +82,28 @@ div#index-page-intro {
   text-align: left;
   color: white; }
   div#index-page-intro h1 {
-    font-size: xxx-large; }
+    font-size: xxx-large;
+    font-weight: normal; }
   div#index-page-intro p {
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    color: #808080; }
   div#index-page-intro a {
     text-decoration: none;
     color: #00fbab;
-    padding: 15px;
+    padding: 20px 50px 20px 50px;
     font-size: 14px;
     border: solid 2px #00fbab;
     border-radius: 30px;
-    transition: 0.5s; }
+    transition: 0.2s; }
   div#index-page-intro a:hover {
     color: white;
     text-decoration: underline;
     cursor: pointer;
     transition: transform 0.3s ease;
+    background-color: #00fbab;
     text-decoration: none;
-    font-size: 30px;
-    border: solid 2px white;
-    transition: 0.5s; }
+    border: solid 2px #00fbab;
+    transition: 0.3s; }
 
 #index-page-logo {
   display: inline-block;
