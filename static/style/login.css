@@ -115,6 +115,22 @@ html, body, #login-form-container {
   #login-form-container input.button:hover {
     color: white; }
 
+#login-forgot {
+  color: gray;
+  font-size: 12px;
+  margin-top: 7px;
+  text-decoration: none;
+  float: left;
+  margin-left: 7px; }
+
+#login-signup {
+  color: gray;
+  font-size: 12px;
+  margin-top: 7px;
+  text-decoration: none;
+  float: right;
+  margin-right: 7px; }
+
 #login-form-title {
   padding-bottom: 15px;
   border-bottom: 1px solid #00fbab;

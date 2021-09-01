@@ -67,6 +67,25 @@ html, body, #login-form-container {
 
 }
 
+@mixin login_ops {
+  color: gray;
+  font-size: 12px;
+  margin-top: 7px;
+  text-decoration: none;
+}
+
+#login-forgot {
+  @include login_ops;
+  float: left;
+  margin-left: 7px;
+}
+
+#login-signup {
+  @include login_ops;
+  float: right;
+  margin-right: 7px;
+}
+
 #login-form-title {
   padding-bottom: 15px;
   border-bottom: 1px solid $greenTextColor;
