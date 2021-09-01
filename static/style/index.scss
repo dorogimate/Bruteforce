@@ -1,9 +1,10 @@
-@import "main";
+@import "main.scss";
 
 div#index-page-intro
 {
   margin-top: 150px;
-  text-align: center;
+  margin-left: 25%;
+  text-align: left;
   color: white;
   h1 {
     font-size: xxx-large;
@@ -15,7 +16,7 @@ div#index-page-intro
     text-decoration: none;
     color: $greenTextColor;
     padding: 15px;
-    font-size: 20px;
+    font-size: 14px;
     border: solid 2px $greenTextColor;
     border-radius: 30px;
     transition: 0.5s;
