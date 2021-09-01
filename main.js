@@ -17,8 +17,9 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-    let firstQueryResult = database.firstQuery;
-    return res.render('index.html', {firstQueryResult});
+    database.loginQuery('aaa', 'aa');
+    database.loginQuery('aaa', 'aaa');
+    return res.render('index.html');
 })
 
 

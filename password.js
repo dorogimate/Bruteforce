@@ -5,6 +5,6 @@ module.exports.hashingPassword = function (myPlaintextPassword, saltRounds) {
 }
 
 
-module.exports.checkPasswordForLogin = async function (loginPasswordString, hashedPassword) {
-    return await bcrypt.compare(loginPasswordString, hashedPassword)
+module.exports.checkPasswordForLogin = function (loginPasswordString, hashedPassword) {
+    return bcrypt.compare(loginPasswordString, hashedPassword)
 }
