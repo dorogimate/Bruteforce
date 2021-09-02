@@ -28,30 +28,30 @@ const userConnection = mysql.createConnection({
 
 // How to return the value of the query and make possible to call the function in main.js -> then use its return value
 module.exports.loginQuery = function (email, password) {
-    let sql = "SELECT * FROM users WHERE email = ?"
-    userConnection.query(sql, [email], function (err, result, fields) {
-        if (err) {return err}
-        else {
-            if (result.length === 0) {
-                console.log(null);
-                return null;
-            }
+    return new Promise(((resolve, reject) => {
+        let sql = "SELECT * FROM users WHERE email = ?"
+        userConnection.query(sql, [email], function (err, result, fields) {
+            if (err) {reject(err)}
             else {
-                checkPasswordForLogin(password, result[0].password).then(function(isPasswordCorrect) {
-                    if (isPasswordCorrect) {
-                        console.log(result[0].phone_number);
-                        return result[0];
-                    } else {
-                        console.log(null);
-                        return null;
-                    }
-                })
+                if (result.length === 0) {
+                    return resolve(null);
+                }
+                else {
+                    checkPasswordForLogin(password, result[0].password).then(function(isPasswordCorrect) {
+                        if (isPasswordCorrect) {
+                            return resolve(result[0]);
+                        } else {
+                            return resolve(null) ;
+                        }
+                    })
+                }
             }
-
-
-        }
-    })
+        })
+    }))
 }
+
+
+
 
 module.exports.signUpQuery = function (name, email, phone_number, company_name, password, uuid) {
     let sql = "INSERT INTO users (name, email, phone_number, company_name, password, uuid) VALUES (?, ?, ?, ?, ?, ?)";
@@ -60,11 +60,15 @@ module.exports.signUpQuery = function (name, email, phone_number, company_name, 
     })
 }
 
-function dataListQuery() {
-    connection.query("SELECT * FROM users", function (err, result, fields) {
-        if (err) {return err}
-        else {
-            return result;
-        }
-    })
+
+// Easy example how database queries can be returned
+module.exports.dataListQuery = function () {
+    return new Promise((resolve, reject) => {
+        userConnection.query(
+            "SELECT * FROM users",
+            (err, result) => {
+                return err ? reject(err) : resolve(result);
+            }
+        );
+    });
 }

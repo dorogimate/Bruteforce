@@ -1,6 +1,6 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
-const session = require("express-session");
+let session = require("express-session");
 const router = express.Router();
 const app = express();
 //Absolute path? - with linux OS
@@ -17,9 +17,18 @@ const bodyParser = require("body-parser");
 
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('trust proxy', 1)
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+}))
+
+
 
 app.get('/', (req, res) => {
-    return res.render('index.html');
+    return res.render('index.html', {session: req.session});
 })
 
 
@@ -29,8 +38,21 @@ app.get('/login', (req, res) => {
 
 
 app.post('/login', (req, res) => {
-    database.loginQuery(req.body.email, req.body.password);
-    return res.render('index.html');
+    (async () => {
+        const loginResponse = await database.loginQuery(req.body.email, req.body.password);
+        if (loginResponse !== null) {
+            req.session.name = loginResponse.name;
+            req.session.email = loginResponse.email;
+            req.session.phone = loginResponse.phone_number;
+            req.session.company = loginResponse.company_name;
+            req.session.uniqueId = loginResponse.uuid;
+            return res.render('index.html', {session: req.session});
+        } else {
+            return res.render('login.html', {errorMessage: 'Wrong username or password! Try again!'})
+        }
+
+    })();
+
     /* If we will be able to return the result of the query it is a dictionary with all the user data -> can be forwarded e.g. the company name
     If return value could used code will look like:
 
