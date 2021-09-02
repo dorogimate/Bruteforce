@@ -16,7 +16,13 @@
         <a href="/settings">Settings</a>
         <a href="/about-us">About us</a>
         <a href="/sign-up">Sign up</a>
+
+        {% if session.name != null %}
+        <a href="/login">Log out</a>
+        {% else %}
         <a href="/login">Log in</a>
+        {% endif %}
+
     </div>
     {% block body %}
     {% endblock %}

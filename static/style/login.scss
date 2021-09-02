@@ -44,6 +44,10 @@ html, body, #login-form-container {
 
 }
 
+.error-message {
+  @include errorMessageFormatter;
+}
+
 #login-form-container {
   @include formContainerCenter;
 }
