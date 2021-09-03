@@ -8,7 +8,11 @@
 {% block body %}
 
     <div id="index-page-intro">
+        {% if session.name != null %}
+        <h1>Welcome {{session.name}}</h1>
+        {% else %}
         <h1>Welcome to Bruteforce Analytics</h1>
+        {% endif %}
         <p>Bruteforce is capable to analyse your company performance, <br>
             propose merger deal, and estimate your worth.</p>
         <a href="/about-us">tell me more</a>

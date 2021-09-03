@@ -38,6 +38,12 @@ $fontFamily: Calibri, sans-serif;
   transform: scaleX(1);
 }
 
+@mixin errorMessageFormatter() {
+  font-weight: bold;
+  font-size: xx-large;
+  margin-top: 30px;
+}
+
 body {
   margin: 0;
   color: $greenTextColor;

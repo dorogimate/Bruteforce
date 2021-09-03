@@ -2,43 +2,48 @@ body {
   margin: 0;
   color: #00fbab;
   font-family: Calibri, sans-serif;
-  background: url("../images/home_bg.jpeg"); }
+  background: url("../images/home_bg.jpeg");
+}
 
 #top-navigation-bar {
-  overflow: hidden; }
-  #top-navigation-bar p {
-    float: left;
-    padding-left: 10px;
-    font-size: 17px;
-    cursor: default; }
-  #top-navigation-bar a {
-    padding: 14px 30px;
-    text-decoration: none;
-    color: #00fbab;
-    font-size: 13px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: 0.5s;
-    position: relative;
-    float: right; }
-  #top-navigation-bar a:hover {
-    text-decoration: none; }
-  #top-navigation-bar a::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #00fbab;
-    transform: scaleX(0);
-    text-decoration: none;
-    transition: transform 0.3s ease; }
-  #top-navigation-bar a:hover::before {
-    transform: scaleX(1); }
-  #top-navigation-bar .linkSelected {
-    color: white; }
+  overflow: hidden;
+}
+#top-navigation-bar p {
+  float: left;
+  padding-left: 10px;
+  font-size: 23px;
+  cursor: default;
+}
+#top-navigation-bar a {
+  padding: 14px 30px;
+  text-decoration: none;
+  color: #00fbab;
+  font-size: 18px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+  float: right;
+}
+#top-navigation-bar a:hover {
+  text-decoration: none;
+}
+#top-navigation-bar a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00fbab;
+  transform: scaleX(0);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+#top-navigation-bar a:hover::before {
+  transform: scaleX(1);
+}
 
 #footer {
   bottom: 0;
@@ -47,109 +52,90 @@ body {
   flex-shrink: 0;
   color: #00fbab;
   text-align: center;
-  padding-top: 15px; }
-  #footer #footer-company-name {
-    font-size: 18px; }
-  #footer p i {
-    size: 30px;
-    color: #00fbab; }
-  #footer i {
-    margin-right: 30px;
-    margin-bottom: 10px;
-    color: #00fbab; }
-  #footer section {
-    border-bottom: 1px solid darkgrey;
-    width: 85%;
-    margin: 0 auto 10px; }
-  #footer p {
-    font-size: 12px; }
-    #footer p a {
-      padding: 14px 14px;
-      text-decoration: none;
-      color: #00fbab;
-      font-size: 12px;
-      margin-top: 10px;
-      cursor: pointer;
-      transition: 0.5s;
-      position: relative; }
-    #footer p a:hover {
-      text-decoration: none; }
+  padding-top: 15px;
+}
+#footer #footer-company-name {
+  font-size: 18px;
+}
+#footer p i {
+  size: 30px;
+  color: #00fbab;
+}
+#footer i {
+  margin-right: 30px;
+  margin-bottom: 10px;
+  color: #00fbab;
+}
+#footer section {
+  border-bottom: 1px solid darkgrey;
+  width: 85%;
+  margin: 0 auto 10px;
+}
+#footer p {
+  font-size: 12px;
+}
+#footer p a {
+  padding: 14px 14px;
+  text-decoration: none;
+  color: #00fbab;
+  font-size: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+}
+#footer p a:hover {
+  text-decoration: none;
+}
 
 html, body, #login-form-container {
-  height: 75%; }
+  height: 75%;
+}
+
+.error-message {
+  font-weight: bold;
+  font-size: xx-large;
+  margin-top: 30px;
+}
 
 #login-form-container {
-  margin: 0 auto;
+  position: relative;
   text-align: center;
+}
+
+#login-form {
   position: absolute;
-  top: 15%;
+  top: 50%;
   left: 0;
   right: 0;
+  margin-top: -9px;
   font-size: 18px;
-  width: 350px; }
-  #login-form-container label {
-    float: left;
-    font-size: 12px; }
-  #login-form-container input {
-    margin-bottom: 35px;
-    padding: 10px 10px 10px 55px;
-    width: 280px;
-    height: 20px;
-    border-radius: 8px;
-    border-color: #00fbab;
-    border-style: solid;
-    background-color: #2d2951;
-    color: white;
-    font-size: 17px; }
-  #login-form-container input.button {
-    height: 40px;
-    width: 345px;
-    margin-top: 0;
-    margin-bottom: 0;
-    color: black;
-    background-color: #00fbab;
-    cursor: pointer;
-    padding: 5px;
-    font-size: 17px;
-    border-radius: 8px; }
-  #login-form-container input.button:hover {
-    color: white; }
-
-#login-forgot {
-  color: gray;
-  font-size: 12px;
-  margin-top: 7px;
-  text-decoration: none;
-  float: left;
-  margin-left: 7px; }
-
-#login-signup {
-  color: gray;
-  font-size: 12px;
-  margin-top: 7px;
-  text-decoration: none;
-  float: right;
-  margin-right: 7px; }
-
-#login-form-title {
-  padding-bottom: 15px;
-  border-bottom: 1px solid #00fbab;
-  margin-bottom: 20px;
-  color: white; }
-
-#email-address {
-  background-size: 30px;
-  background-repeat: no-repeat;
-  background-position-x: 15px;
-  background-position-y: center;
-  background-image: url("../images/input_login_mail.svg"); }
-
-#password {
-  background-size: 30px;
-  background-repeat: no-repeat;
-  background-position-x: 15px;
-  background-position-y: center;
-  background-image: url("../images/input_login_pass.svg"); }
+}
+#login-form label {
+  margin-top: 45px;
+}
+#login-form input {
+  margin-top: 15px;
+  margin-bottom: 35px;
+  width: 30%;
+  height: 22px;
+  border-radius: 4px;
+}
+#login-form input.button {
+  height: 32px;
+  width: 7%;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #00fbab;
+  background-color: #2e2e75;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 18px;
+  border-radius: 4px;
+}
 
 #footer {
-  position: fixed; }
+  position: fixed;
+}
+
+/*# sourceMappingURL=login.css.map */
