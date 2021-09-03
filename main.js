@@ -26,7 +26,6 @@ app.use(session({
 }))
 
 
-
 app.get('/', (req, res) => {
     return res.render('index.html', {session: req.session});
 })
@@ -55,21 +54,11 @@ app.post('/login', (req, res) => {
     })();
 
     /* If we will be able to return the result of the query it is a dictionary with all the user data -> can be forwarded e.g. the company name
-    If return value could used code will look like:
+       If session works, this is code snippet is uneccessary
 
-    let loginResponse = database.loginQuery(req.body.email, req.body.password)
-    if (loginResponse !== null) {
-        session.user = loginResponse.name;
-        session.email = loginResponse.email;
-        session.phone = loginResponse.phone_number;
-        session.company = loginResponse.company_name;
-        session.uniqueId = loginResponse.uuid;
         return res.render('dashboard.html'+loginResponse.uuid, {name: loginResponse.name, email: loginResponse.email, --> this part not even needed if session work, however cannot check it currently
                                                           phone: loginResponse.phone_number, company: loginResponse.company_name,
                                                           uniqueId: loginResponse.uuid})
-    } else {
-        return res.render('login.html', {errorMessage: 'Wrong username or password! Try again!'})
-    }
      */
 })
 
