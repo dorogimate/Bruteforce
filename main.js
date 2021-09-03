@@ -102,7 +102,7 @@ app.post('/sign-up', (req, res) => {
             let currentHashedPassword = password.hashingPassword(req.body.password, 10);
             currentHashedPassword.then(function(hashedPassword) {
                 const newId = uuidv4();
-                database.signUpQuery(name, email, req.body.phonePrefix + phone, company, hashedPassword, newId);
+                database.signUpQuery(name, email, phone, company, hashedPassword, newId);
             })
             setTimeout(function () {
                 return res.render('index.html');

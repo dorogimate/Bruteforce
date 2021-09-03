@@ -2,43 +2,51 @@ body {
   margin: 0;
   color: #00fbab;
   font-family: Calibri, sans-serif;
-  background: url("../images/home_bg.jpeg"); }
+  background: url("../images/home_bg.jpeg");
+}
 
 #top-navigation-bar {
-  overflow: hidden; }
-  #top-navigation-bar p {
-    float: left;
-    padding-left: 10px;
-    font-size: 17px;
-    cursor: default; }
-  #top-navigation-bar a {
-    padding: 14px 30px;
-    text-decoration: none;
-    color: #00fbab;
-    font-size: 13px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: 0.5s;
-    position: relative;
-    float: right; }
-  #top-navigation-bar a:hover {
-    text-decoration: none; }
-  #top-navigation-bar a::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #00fbab;
-    transform: scaleX(0);
-    text-decoration: none;
-    transition: transform 0.3s ease; }
-  #top-navigation-bar a:hover::before {
-    transform: scaleX(1); }
-  #top-navigation-bar .linkSelected {
-    color: white; }
+  overflow: hidden;
+}
+#top-navigation-bar p {
+  float: left;
+  padding-left: 10px;
+  font-size: 17px;
+  cursor: default;
+}
+#top-navigation-bar a {
+  padding: 14px 30px;
+  text-decoration: none;
+  color: #00fbab;
+  font-size: 13px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+  float: right;
+}
+#top-navigation-bar a:hover {
+  text-decoration: none;
+}
+#top-navigation-bar a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00fbab;
+  transform: scaleX(0);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+#top-navigation-bar a:hover::before {
+  transform: scaleX(1);
+}
+#top-navigation-bar .linkSelected {
+  color: white;
+}
 
 #footer {
   bottom: 0;
@@ -47,68 +55,85 @@ body {
   flex-shrink: 0;
   color: #00fbab;
   text-align: center;
-  padding-top: 15px; }
-  #footer #footer-company-name {
-    font-size: 18px; }
-  #footer p i {
-    size: 30px;
-    color: #00fbab; }
-  #footer i {
-    margin-right: 30px;
-    margin-bottom: 10px;
-    color: #00fbab; }
-  #footer section {
-    border-bottom: 1px solid darkgrey;
-    width: 85%;
-    margin: 0 auto 10px; }
-  #footer p {
-    font-size: 12px; }
-    #footer p a {
-      padding: 14px 14px;
-      text-decoration: none;
-      color: #00fbab;
-      font-size: 12px;
-      margin-top: 10px;
-      cursor: pointer;
-      transition: 0.5s;
-      position: relative; }
-    #footer p a:hover {
-      text-decoration: none; }
+  padding-top: 15px;
+}
+#footer #footer-company-name {
+  font-size: 18px;
+}
+#footer p i {
+  size: 30px;
+  color: #00fbab;
+}
+#footer i {
+  margin-right: 30px;
+  margin-bottom: 10px;
+  color: #00fbab;
+}
+#footer section {
+  border-bottom: 1px solid darkgrey;
+  width: 85%;
+  margin: 0 auto 10px;
+}
+#footer p {
+  font-size: 12px;
+}
+#footer p a {
+  padding: 14px 14px;
+  text-decoration: none;
+  color: #00fbab;
+  font-size: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+}
+#footer p a:hover {
+  text-decoration: none;
+}
 
 div#index-page-intro {
   display: inline-block;
   margin-top: 150px;
   margin-left: 25%;
   text-align: left;
-  color: white; }
-  div#index-page-intro h1 {
-    font-size: xxx-large;
-    font-weight: normal; }
-  div#index-page-intro p {
-    margin-bottom: 50px;
-    color: #808080; }
-  div#index-page-intro a {
-    text-decoration: none;
-    color: #00fbab;
-    padding: 20px 50px 20px 50px;
-    font-size: 14px;
-    border: solid 2px #00fbab;
-    border-radius: 30px;
-    transition: 0.2s; }
-  div#index-page-intro a:hover {
-    color: white;
-    text-decoration: underline;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    background-color: #00fbab;
-    text-decoration: none;
-    border: solid 2px #00fbab;
-    transition: 0.3s; }
+  color: white;
+}
+div#index-page-intro h1 {
+  font-size: xxx-large;
+  font-weight: normal;
+}
+div#index-page-intro p {
+  margin-bottom: 50px;
+  color: #808080;
+}
+div#index-page-intro a {
+  text-decoration: none;
+  color: #00fbab;
+  padding: 20px 50px 20px 50px;
+  font-size: 14px;
+  border: solid 2px #00fbab;
+  border-radius: 30px;
+  transition: 0.2s;
+}
+div#index-page-intro a:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  background-color: #00fbab;
+  text-decoration: none;
+  border: solid 2px #00fbab;
+  transition: 0.3s;
+}
 
 #index-page-logo {
   display: inline-block;
   width: 350px;
-  height: 270px; }
+  height: 270px;
+}
 
 #footer {
-  position: fixed; }
+  position: fixed;
+}
+
+/*# sourceMappingURL=index.css.map */

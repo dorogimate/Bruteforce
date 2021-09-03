@@ -3,6 +3,7 @@
 {% block head %}
 <title>Bruteforce Analytics - Main page</title>
 <link rel="stylesheet" href="/style/sign-up.css">
+<script src="/js/sign-up.js" defer></script>
 {% endblock %}
 
 {% block body %}
@@ -15,7 +16,7 @@
             <p class="error-message">{{ notAllFieldFulfilledErrorMessage }}</p>
             <p class="error-message">{{ incorrectEmailFormatErrorMessage }}</p>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="first-name" value="{{ initialName }}">
+            <input type="text" id="name" name="name" value="{{ initialName }}">
             <label for="company-name">Company name:</label>
             <input type="text" id="company-name" name="company" value="{{ initialCompany }}">
             <label for="phone-number">Phone number:</label>
@@ -27,12 +28,14 @@
             <input type="password" id="password" name="password" >
             <label for="password-repeat">Repeat password:</label>
             <input type="password" id="password-repeat" name="passwordRepeat" >
-            <input class="button" type="submit" value="Sign up">
+            <input class="button" id="submitButton" type="submit" value="Sign up">
             <p id="successfulRegistration" class="error-message"></p>
             <div class="loader-container">
                 <div id="loader" class="loader"></div>
             </div>
         </form>
+
+
     </div>
 </div>
 
