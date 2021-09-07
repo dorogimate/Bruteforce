@@ -14,6 +14,7 @@ const database = require('./database_common');
 const password = require('./password');
 const {request} = require("express");
 const bodyParser = require("body-parser");
+const {checkEmailAddress} = require("./database_common");
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -76,27 +77,41 @@ app.post('/sign-up', (req, res) => {
     let checkAllFieldsFulfilled = name === '' || email === '' || phone === '' || company === '' ||
                                   req.body.password === '' || req.body.passwordRepeat === '';
     let checkEmail = !email.includes('@') || !email.includes('.com');
-
     if (checkAllFieldsFulfilled) {
         return res.render('sign-up.html', {notAllFieldFulfilledErrorMessage: "Please fill all fields!",
             initialName: name, initialEmail: email, initialPhone: phone, initialCompany: company});
     } else {
         if (checkEmail) {
-            return res.render('sign-up.html', {incorrectEmailFormatErrorMessage: "Please enter valid email address!",
-                initialName: name, initialEmail: email, initialPhone: phone, initialCompany: company});
-        } else if (req.body.password !== req.body.passwordRepeat) { //ez JavaScriptel is meg tudnám oldani, össze lehet hozni a backendet és a js-t?
-            return res.render('sign-up.html', {notMatchingPasswordsErrorMessage: "Passwords are not matching!",
-                initialName: name, initialEmail: email, initialPhone: phone, initialCompany: company});
-        } else {
-            let currentHashedPassword = password.hashingPassword(req.body.password, 10);
-            currentHashedPassword.then(function(hashedPassword) {
-                const newId = uuidv4();
-                database.signUpQuery(name, email, phone, company, hashedPassword, newId);
-            })
-            setTimeout(function () {
-                return res.render('index.html');
-                }, 4000
-            )
+            return res.render('sign-up.html', {
+                incorrectEmailFormatErrorMessage: "Please enter valid email address!",
+                initialName: name, initialEmail: email, initialPhone: phone, initialCompany: company
+            });
+        } else if (true) {
+            (async () => {
+                const checkAlreadyUsedEmail = await database.checkEmailAddress(email);
+                if (checkAlreadyUsedEmail) {
+                    return res.render('sign-up.html', {
+                        incorrectEmailFormatErrorMessage: "Email address already in use!",
+                        initialName: name, initialEmail: "", initialPhone: phone, initialCompany: company
+                    });
+                } else {
+                    if (req.body.password !== req.body.passwordRepeat) { //ez JavaScriptel is meg tudnám oldani, össze lehet hozni a backendet és a js-t?
+                        return res.render('sign-up.html', {notMatchingPasswordsErrorMessage: "Passwords are not matching!",
+                            initialName: name, initialEmail: email, initialPhone: phone, initialCompany: company});
+                    } else {
+                        let currentHashedPassword = password.hashingPassword(req.body.password, 10);
+                        currentHashedPassword.then(function(hashedPassword) {
+                            const newId = uuidv4();
+                            database.signUpQuery(name, email, phone, company, hashedPassword, newId);
+                        })
+                        setTimeout(function () {
+                                console.log('Wokring')
+                                return res.render('index.html');
+                            }, 4000
+                        )
+                    }
+                }
+            })();
         }
     }
 

@@ -4,6 +4,7 @@ const {callable} = require("nunjucks/src/tests");
 const {checkPasswordForLogin} = require("./password");
 const password = require("./password");
 const {v4: uuidv4} = require("uuid");
+const {reject} = require("bcrypt/promises");
 require('dotenv').config();
 
 // Why does not it reach environmental variables -> cursor over process.env.MYSQL_USERNAME can see my variable, but
@@ -29,7 +30,7 @@ const userConnection = mysql.createConnection({
 // How to return the value of the query and make possible to call the function in main.js -> then use its return value
 module.exports.loginQuery = function (email, password) {
     return new Promise(((resolve, reject) => {
-        let sql = "SELECT * FROM users WHERE email = ?"
+        let sql = "SELECT * FROM users WHERE email = ?";
         userConnection.query(sql, [email], function (err, result, fields) {
             if (err) {reject(err)}
             else {
@@ -58,6 +59,22 @@ module.exports.signUpQuery = function (name, email, phone_number, company_name, 
     userConnection.query(sql, [name, email, phone_number, company_name, password, uuid], function (err, result, fields) {
         if(err) {return err}
     })
+}
+
+
+module.exports.checkEmailAddress = function(email) {
+    return new Promise(((resolve, reject) => {
+        let sql = "SELECT * FROM users WHERE email = ?";
+        userConnection.query(sql, [email], function(err, result, fields){
+            if(err) {reject(err)}
+            else {
+                if (result.length !== 0) {
+                    return resolve(true)
+                } else return resolve(false);
+            }
+        })
+
+    }))
 }
 
 
