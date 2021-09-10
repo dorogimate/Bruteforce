@@ -25,6 +25,7 @@ body {
   cursor: pointer;
   transition: 0.5s;
   position: relative;
+  color: white;
   float: right;
 }
 #top-navigation-bar #layout-links a:hover {
@@ -61,6 +62,20 @@ body {
 }
 #footer #footer-company-name {
   font-size: 18px;
+  margin-bottom: 10px;
+}
+#footer #footer-company-name a {
+  text-decoration: none;
+}
+#footer #footer-company-name a p {
+  color: #00fbab;
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+#footer #footer-company-name a p #copyright-icon {
+  width: 8px;
+  margin-bottom: 5px;
 }
 #footer p i {
   size: 30px;
@@ -77,9 +92,14 @@ body {
   margin: 0 auto 10px;
 }
 #footer section #facebook-icon {
-  color: #00fbab;
-  width: 5px;
-  height: 5px;
+  width: 15px;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+#footer section #instagram-icon {
+  width: 17px;
+  margin-bottom: 10px;
 }
 #footer p {
   font-size: 12px;
