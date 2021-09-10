@@ -58,6 +58,7 @@ module.exports.signUpQuery = function (name, email, phone_number, company_name, 
     let sql = "INSERT INTO users (name, email, phone_number, company_name, password, uuid) VALUES (?, ?, ?, ?, ?, ?)";
     userConnection.query(sql, [name, email, phone_number, company_name, password, uuid], function (err, result, fields) {
         if(err) {return err}
+
     })
 }
 

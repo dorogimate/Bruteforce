@@ -54,27 +54,36 @@ body {
 
 #top-navigation-bar {
   overflow: hidden;
-  p {
-    float: left;
-    padding-left: 10px;
-    font-size: 17px;
-    cursor: default;
+  #layout-company-name {
+    a {
+      p {
+        float: left !important;
+        padding-left: 20px;
+        padding-top: 7px;
+        font-size: 17px;
+        cursor: pointer;
+        color: $greenTextColor;
+      }
+    }
   }
-  a {
-    @include linkFormatter(13px, 14px, 30px);
-    float: right;
-  }
-  a:hover {
-    text-decoration: none;
-  }
-  a::before {
-    @include linkBeforeFormatter
-  }
-  a:hover::before {
-    @include linkHoverBeforeFormatter
-  }
-  .linkSelected {
-    color: white;
+
+  #layout-links {
+    a {
+      @include linkFormatter(13px, 14px, 30px);
+      float: right;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    a::before {
+      @include linkBeforeFormatter
+    }
+    a:hover::before {
+      @include linkHoverBeforeFormatter
+    }
+    .linkSelected {
+      color: white;
+    }
   }
 }
 
@@ -105,6 +114,12 @@ body {
     border-bottom: 1px solid darkgrey;
     width: 85%;
     margin: 0 auto 10px;
+
+    #facebook-icon {
+      color: $greenTextColor;
+      width: 5px;
+      height: 5px;
+    }
   }
   p {
     font-size: 12px;
@@ -116,5 +131,3 @@ body {
     }
   }
 }
-
-
