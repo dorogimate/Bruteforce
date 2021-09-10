@@ -116,6 +116,7 @@ body {
 }
 #footer p a:hover {
   text-decoration: none;
+  color: white !important;
 }
 
 #sign-up-form-container {
@@ -220,6 +221,7 @@ body {
   font-weight: bold;
   font-size: xx-large;
   margin-top: 30px;
+  text-align: center;
 }
 
 select {

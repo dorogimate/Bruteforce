@@ -116,6 +116,7 @@ body {
 }
 #footer p a:hover {
   text-decoration: none;
+  color: white !important;
 }
 
 html, body, #login-form-container {

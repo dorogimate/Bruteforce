@@ -105,6 +105,7 @@ html, body, #sign-up-form-container {
 
 .error-message {
   @include errorMessageFormatter;
+  text-align: center;
 }
 
 select {
