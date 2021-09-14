@@ -15,8 +15,12 @@
         <div id="layout-links">
             <a class="layout-link {% if help %} link-selected {% endif %}" href="/help">HELP</a>
             <a class="layout-link {% if aboutUs %} link-selected {% endif %}" href="/about-us">ABOUT US</a>
+            {% if session.name != null %}
+            <a class="layout-link" href="/logout">LOG OUT</a>
+            {% else %}
             <a class="layout-link {% if signUp %} link-selected {% endif %}" href="/sign-up">SIGN UP</a>
             <a class="layout-link {% if logIn %} link-selected {% endif %}" href="/login">LOG IN</a>
+            {% endif %}
         </div>
 
     </div>

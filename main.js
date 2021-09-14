@@ -36,12 +36,21 @@ app.use(cookieParser());
 
 let session;
 
-
 app.get('/', (req, res) => {
-    console.log(session);
     return res.render('index.html', {session});
 })
 
+
+app.get('/logout',(req,res) => {
+    session.destroy(); // if I only used this it was ineffective on other pages
+    session = req.session;
+    session.name = null;
+    session.email = null;
+    session.phone = null;
+    session.company = null;
+    session.uniqueId = null;
+    return res.render('index.html');
+});
 
 app.get('/login', (req, res) => {
     return res.render('login.html', {logIn : true, session});
@@ -58,7 +67,6 @@ app.post('/login', (req, res) => {
             session.phone = loginResponse.phone_number;
             session.company = loginResponse.company_name;
             session.uniqueId = loginResponse.uuid;
-            console.log(session);
             return res.render('index.html', {session});
         } else {
             return res.render('login.html', {errorMessage: 'Wrong username or password! Try again!'})
@@ -76,7 +84,6 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/sign-up', (req, res) => {
-    console.log(session);
     return res.render('sign-up.html',{signUp: true, session});
 })
 
@@ -117,7 +124,6 @@ app.post('/sign-up', (req, res) => {
                             database.signUpQuery(name, email, phone, company, hashedPassword, newId);
                         })
                         setTimeout(function () {
-                                console.log('Wokring')
                                 return res.render('index.html');
                             }, 4000
                         )
