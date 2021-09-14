@@ -16,6 +16,15 @@ body {
   cursor: pointer;
   color: #00fbab;
 }
+#top-navigation-bar a {
+  color: #2c87f0;
+}
+#top-navigation-bar a:visited {
+  color: #636;
+}
+#top-navigation-bar a:hover, #top-navigation-bar a:active, #top-navigation-bar a:focus {
+  color: #c33;
+}
 #top-navigation-bar #layout-links a {
   padding: 14px 30px;
   text-decoration: none;
@@ -25,6 +34,7 @@ body {
   cursor: pointer;
   transition: 0.5s;
   position: relative;
+  color: #00fbab;
   float: right;
 }
 #top-navigation-bar #layout-links a:hover {
@@ -45,9 +55,6 @@ body {
 }
 #top-navigation-bar #layout-links a:hover::before {
   transform: scaleX(1);
-}
-#top-navigation-bar #layout-links .link-selected {
-  color: white !important;
 }
 
 #footer {
@@ -118,101 +125,4 @@ body {
   color: white !important;
 }
 
-html, body, #login-form-container {
-  height: 75%;
-}
-
-.error-message {
-  font-weight: bold;
-  font-size: xx-large;
-  margin-top: 30px;
-}
-
-#login-form-container {
-  margin: 0 auto;
-  text-align: center;
-  position: absolute;
-  top: 15%;
-  left: 0;
-  right: 0;
-  font-size: 18px;
-  width: 350px;
-}
-#login-form-container label {
-  float: left;
-  font-size: 12px;
-}
-#login-form-container input {
-  margin-bottom: 35px;
-  padding: 10px 10px 10px 55px;
-  width: 280px;
-  height: 20px;
-  border-radius: 8px;
-  border-color: #00fbab;
-  border-style: solid;
-  background-color: #2d2951;
-  color: white;
-  font-size: 17px;
-}
-#login-form-container input.button {
-  height: 40px;
-  width: 345px;
-  margin-top: 0;
-  margin-bottom: 0;
-  color: black;
-  background-color: #00fbab;
-  cursor: pointer;
-  padding: 5px;
-  font-size: 17px;
-  border-radius: 8px;
-}
-#login-form-container input.button:hover {
-  color: white;
-}
-
-#login-forgot {
-  color: gray;
-  font-size: 12px;
-  margin-top: 7px;
-  text-decoration: none;
-  float: left;
-  margin-left: 7px;
-}
-
-#login-signup {
-  color: gray;
-  font-size: 12px;
-  margin-top: 7px;
-  text-decoration: none;
-  float: right;
-  margin-right: 7px;
-}
-
-#login-form-title {
-  padding-bottom: 15px;
-  border-bottom: 1px solid #00fbab;
-  margin-bottom: 20px;
-  color: white;
-}
-
-#email-address {
-  background-size: 30px;
-  background-repeat: no-repeat;
-  background-position-x: 15px;
-  background-position-y: center;
-  background-image: url("../images/input_login_mail.svg");
-}
-
-#password {
-  background-size: 30px;
-  background-repeat: no-repeat;
-  background-position-x: 15px;
-  background-position-y: center;
-  background-image: url("../images/input_login_pass.svg");
-}
-
-#footer {
-  position: fixed;
-}
-
-/*# sourceMappingURL=login.css.map */
+/*# sourceMappingURL=main.css.map */

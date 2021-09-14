@@ -70,7 +70,6 @@ body {
   #layout-links {
     a {
       @include linkFormatter(13px, 14px, 30px);
-      color: white;
       float: right;
     }
     a:hover {
@@ -82,11 +81,13 @@ body {
     a:hover::before {
       @include linkHoverBeforeFormatter
     }
-    .linkSelected {
-      color: white;
+    .link-selected {
+      color: white !important;
     }
   }
 }
+
+
 
 #footer-container {
 }

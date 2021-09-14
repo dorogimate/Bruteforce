@@ -33,8 +33,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/login', (req, res) => {
-    let actualPage = 'login';
-    return res.render('login.html', {actualPage});
+    return res.render('login.html', {logIn : true});
 })
 
 
@@ -64,8 +63,7 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/sign-up', (req, res) => {
-    let actualPage = 'signup';
-    return res.render('sign-up.html',{actualPage});
+    return res.render('sign-up.html',{signUp: true});
 })
 
 

@@ -25,7 +25,6 @@ body {
   cursor: pointer;
   transition: 0.5s;
   position: relative;
-  color: white;
   float: right;
 }
 #top-navigation-bar #layout-links a:hover {
@@ -47,8 +46,8 @@ body {
 #top-navigation-bar #layout-links a:hover::before {
   transform: scaleX(1);
 }
-#top-navigation-bar #layout-links .linkSelected {
-  color: white;
+#top-navigation-bar #layout-links .link-selected {
+  color: white !important;
 }
 
 #footer {

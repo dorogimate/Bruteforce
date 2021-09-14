@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/style/main.css">
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js" defer></script>
     {% block head %}
         <title>Main page</title>
     {% endblock %}
@@ -13,10 +13,10 @@
     <div id="top-navigation-bar">
         <div id="layout-company-name"><a href="/"><p>Bruteforce Analytics</p></a></div>
         <div id="layout-links">
-            <a class="layout-link" href="/help" {% if actualPage == help %} class="linkSelected" {% endif %}>HELP</a>
-            <a class="layout-link" href="/about-us" {% if actualPage == aboutus %} class="linkSelected" {% endif %}>ABOUT US</a>
-            <a class="layout-link" href="/sign-up" {% if actualPage == signup %} class="linkSelected" {% endif %}>SIGN UP</a>
-            <a class="layout-link" href="/login" {% if actualPage == login %} class="linkSelected" {% endif %}>LOG IN</a>
+            <a class="layout-link {% if help %} link-selected {% endif %}" href="/help">HELP</a>
+            <a class="layout-link {% if aboutUs %} link-selected {% endif %}" href="/about-us">ABOUT US</a>
+            <a class="layout-link {% if signUp %} link-selected {% endif %}" href="/sign-up">SIGN UP</a>
+            <a class="layout-link {% if logIn %} link-selected {% endif %}" href="/login">LOG IN</a>
         </div>
 
     </div>
