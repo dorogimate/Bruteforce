@@ -1,6 +1,7 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
-let session = require("express-session");
+const cookieParser = require("cookie-parser");
+const sessions = require('express-session');
 const router = express.Router();
 const app = express();
 //Absolute path? - with linux OS
@@ -19,21 +20,31 @@ const {checkEmailAddress} = require("./database_common");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('trust proxy', 1)
-app.use(session({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true }
-}))
+
+const oneDay = 1000 * 60 * 60 * 24;
+app.use(sessions({
+    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+    saveUninitialized:true,
+    cookie: { maxAge: oneDay },
+    resave: false
+}));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname));
+app.use(cookieParser());
+
+let session;
 
 
 app.get('/', (req, res) => {
-    return res.render('index.html', {session: req.session});
+    console.log(session);
+    return res.render('index.html', {session});
 })
 
 
 app.get('/login', (req, res) => {
-    return res.render('login.html', {logIn : true});
+    return res.render('login.html', {logIn : true, session});
 })
 
 
@@ -41,12 +52,14 @@ app.post('/login', (req, res) => {
     (async () => {
         const loginResponse = await database.loginQuery(req.body.email, req.body.password);
         if (loginResponse !== null) {
-            req.session.name = loginResponse.name;
-            req.session.email = loginResponse.email;
-            req.session.phone = loginResponse.phone_number;
-            req.session.company = loginResponse.company_name;
-            req.session.uniqueId = loginResponse.uuid;
-            return res.render('index.html', {session: req.session});
+            session = req.session;
+            session.name = loginResponse.name;
+            session.email = loginResponse.email;
+            session.phone = loginResponse.phone_number;
+            session.company = loginResponse.company_name;
+            session.uniqueId = loginResponse.uuid;
+            console.log(session);
+            return res.render('index.html', {session});
         } else {
             return res.render('login.html', {errorMessage: 'Wrong username or password! Try again!'})
         }
@@ -63,7 +76,8 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/sign-up', (req, res) => {
-    return res.render('sign-up.html',{signUp: true});
+    console.log(session);
+    return res.render('sign-up.html',{signUp: true, session});
 })
 
 
