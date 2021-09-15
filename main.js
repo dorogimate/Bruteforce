@@ -34,57 +34,38 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 app.use(cookieParser());
 
-let session;
 
 app.get('/', (req, res) => {
-    return res.render('index.html', {session});
+    return res.render('index.html', {session: req.session});
 })
 
 
 app.get('/logout',(req,res) => {
-    session.destroy(); // if I only used this it was ineffective on other pages
-    session = req.session;
-    session.name = null;
-    session.email = null;
-    session.phone = null;
-    session.company = null;
-    session.uniqueId = null;
+    req.session.destroy();
     return res.render('index.html');
 });
 
 app.get('/login', (req, res) => {
-    return res.render('login.html', {logIn : true, session});
+    return res.render('login.html', {logIn : true, session: req.session});
 })
 
 
-app.post('/login', (req, res) => {
-    (async () => {
-        const loginResponse = await database.loginQuery(req.body.email, req.body.password);
-        if (loginResponse !== null) {
-            session = req.session;
-            session.name = loginResponse.name;
-            session.email = loginResponse.email;
-            session.phone = loginResponse.phone_number;
-            session.company = loginResponse.company_name;
-            session.uniqueId = loginResponse.uuid;
-            return res.render('index.html', {session});
-        } else {
-            return res.render('login.html', {errorMessage: 'Wrong username or password! Try again!'})
-        }
-
-    })();
-
-    /* If we will be able to return the result of the query it is a dictionary with all the user data -> can be forwarded e.g. the company name
-       If session works, this is code snippet is uneccessary
-
-        return res.render('dashboard.html'+loginResponse.uuid, {name: loginResponse.name, email: loginResponse.email, --> this part not even needed if session work, however cannot check it currently
-                                                          phone: loginResponse.phone_number, company: loginResponse.company_name,
-                                                          uniqueId: loginResponse.uuid})
-     */
+app.post('/login', async (req, res) => {
+    const loginResponse = await database.loginQuery(req.body.email, req.body.password);
+    if (loginResponse !== null) {
+        req.session.name = loginResponse.name;
+        req.session.email = loginResponse.email;
+        req.session.phone = loginResponse.phone_number;
+        req.session.company = loginResponse.company_name;
+        req.session.uniqueId = loginResponse.uuid;
+        return res.render('index.html', {session: req.session});
+    } else {
+        return res.render('login.html', {errorMessage: 'Wrong username or password! Try again!'})
+    }
 })
 
 app.get('/sign-up', (req, res) => {
-    return res.render('sign-up.html',{signUp: true, session});
+    return res.render('sign-up.html',{signUp: true, session: req.session});
 })
 
 
@@ -124,7 +105,7 @@ app.post('/sign-up', (req, res) => {
                             database.signUpQuery(name, email, phone, company, hashedPassword, newId);
                         })
                         setTimeout(function () {
-                                return res.render('index.html');
+                                return res.render('index.html'); //ennek üzenetet átadni
                             }, 4000
                         )
                     }
