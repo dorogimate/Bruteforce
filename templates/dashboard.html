@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style/dashboard.css">
+    <script src="/js/dashboard.js"></script>
+    {% block head %}
+    <title>Main page</title>
+    {% endblock %}
+</head>
+{% block body %}
+<div id="dashboard-topbar">
+    <a href="" id="dashboard-profile">
+    <select name="cars" id="dashboard-profile-select">
+        <option value="volvo"></option>
+    </select>
+    </a>
+    <a href=""  id="dashboard-settings"></a>
+    <a href="" id="dashboard-notification"></a>
+</div>
+
+
+
+<div id="dashboard-sidebar">
+    <a id="sidebar-home" class="sidebar-button active">
+        <!-- <p class="sidebar-title" >Executive Summary</p>-->
+    </a>
+
+    <a id="sidebar-es" class="sidebar-button" onmouseover="showContent('sidebar-content-es')" onmouseleave="hideContent('sidebar-content')">
+        <!-- <p class="sidebar-title" >Executive Summary</p>-->
+     </a>
+
+     <a id="sidebar-co">
+         <!--<p class="sidebar-title">Company Overview</p>-->
+    </a>
+
+    <a id="sidebar-ind">
+        <!--<p class="sidebar-title">Industry</p>-->
+    </a>
+
+    <a id="sidebar-val">
+       <!-- <p class="sidebar-title">Valuation</p>-->
+    </a>
+
+    <a id="sidebar-to">
+       <!-- <p class="sidebar-title">Transaction Opportunities</p>-->
+    </a>
+
+
+    <a id="sidebar-inputs">
+       <!-- <p class="sidebar-title">Inputs</p>-->
+    </a>
+
+    <a id="sidebar-export">
+       <!-- <p class="sidebar-title">Export</p>-->
+    </a>
+
+    <a id="sidebar-qual">
+       <!-- <p class="sidebar-title">Qualitatives</p>-->
+    </a>
+
+</div>
+
+<div id="sidebar-content-frame" onmouseover="showContent(this.id)" onmouseleave="hideContent(this.id)">
+    <div class="sidebar-content" id="sidebar-content-es" onmouseover="showContent(this.id)" onmouseleave="hideContent(this.id)">
+        <p class="sidebar-title" >Executive Summary</p>
+    </div>
+
+</div>
+
+
+{% endblock %}
+</html>

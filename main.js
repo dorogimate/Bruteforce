@@ -45,4 +45,8 @@ app.post('/sign-up', (req, res) => {
     return res.render('index.html')
 })
 
+app.get('/dashboard', (req, res) => {
+    return res.render('dashboard.html');
+})
+
 app.listen(port, () =>  console.log(`Server running at: http://localhost:${port}`))

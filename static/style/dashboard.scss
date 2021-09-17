@@ -1,0 +1,153 @@
+body {
+  background-color: #15102E;
+}
+
+#dashboard-topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #454658;
+  z-index: 1;
+}
+
+#dashboard-topbar a {
+  float: right;
+  height: 30px;
+}
+
+#dashboard-topbar a:hover {
+  background-color: #15102E;
+}
+
+@mixin dashboard-icons() {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px 30px;
+  padding: 10px 30px 10px 30px;
+}
+
+#dashboard-notification {
+  @include dashboard-icons;
+  background-image: url("../images/dashboard/dashboard_notification.svg");
+}
+
+#dashboard-notification.active {
+  background-image: url("../images/dashboard/dashboard_notification_hover.svg");
+  background-color: #15102E;
+}
+
+#dashboard-settings {
+  @include dashboard-icons;
+  background-image: url("../images/dashboard/topbar_settings.svg");
+}
+
+#dashboard-profile {
+  background-image: url("../images/dashboard/topbar_profile.svg");
+  background-repeat: no-repeat;
+  background-position: 18px center;
+  background-size: 30px 30px;
+  padding: 15px 50px 5px 70px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+#dashboard-profile-select {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 16px;
+}
+
+#dashboard-sidebar {
+  position: fixed;
+  z-index:2;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  background-color: #15102E;
+  margin-top: -8px;
+}
+
+.dashboard-sidebar {
+  margin-top: 5px;
+}
+
+#dashboard-sidebar a:hover, .active {
+  background-color: #2E2951;
+}
+
+@mixin sidebar-icons() {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 35px 35px;
+  padding: 25px 20px 25px 20px;
+}
+
+$sidebar-icons-margin-top: 5px;
+
+#sidebar-home {
+  @include sidebar-icons;
+  background-image: url("../images/dashboard/leftbar_home.svg");
+}
+
+#sidebar-es {
+  @include sidebar-icons;
+  background-image: url("../images/dashboard/leftbar_es.svg");
+  margin-top: 40px;
+}
+
+#sidebar-co {
+  @include sidebar-icons;
+  background-image: url("../images/dashboard/leftbar_co.svg");
+  margin-top: $sidebar-icons-margin-top;
+}
+
+#sidebar-ind {
+  @include sidebar-icons;
+  background-image: url("../images/dashboard/leftbar_ind.svg");
+  margin-top: $sidebar-icons-margin-top;
+}
+
+#sidebar-val {
+  @include sidebar-icons;
+  background-image: url("../images/dashboard/leftbar_val.svg");
+  margin-top: $sidebar-icons-margin-top;
+}
+
+#sidebar-to {
+  @include sidebar-icons;
+  background-image: url("../images/dashboard/leftbar_to.svg");
+  margin-top: $sidebar-icons-margin-top;
+}
+
+#sidebar-inputs {
+  @include sidebar-icons;
+  background-image: url("../images/dashboard/leftbar_inputs.svg");
+  margin-top: $sidebar-icons-margin-top;
+}
+
+#sidebar-export {
+  @include sidebar-icons;
+  background-image: url("../images/dashboard/leftbar_export.svg");
+  margin-top: $sidebar-icons-margin-top;
+}
+
+#sidebar-qual {
+  @include sidebar-icons;
+  background-image: url("../images/dashboard/leftbar_qual.svg");
+  margin-top: $sidebar-icons-margin-top;
+}
+
+#sidebar-content-frame {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 50px;
+  height: 100%;
+  width: 200px;
+  margin-top: -8px;
+  background-color: #2E2951;
+}
