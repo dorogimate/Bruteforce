@@ -105,7 +105,7 @@ app.post('/sign-up', (req, res) => {
                             database.signUpQuery(name, email, phone, company, hashedPassword, newId);
                         })
                         setTimeout(function () {
-                                return res.render('index.html'); //ennek üzenetet átadni
+                                return res.render('login.html'); //ennek üzenetet átadni
                             }, 4000
                         )
                     }
