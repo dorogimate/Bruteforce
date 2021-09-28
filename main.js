@@ -29,6 +29,7 @@ app.use(sessions({
     resave: false
 }));
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
@@ -49,6 +50,9 @@ app.get('/login', (req, res) => {
     return res.render('login.html', {logIn : true, session: req.session});
 })
 
+//email verificaiton
+
+
 
 app.post('/login', async (req, res) => {
     const loginResponse = await database.loginQuery(req.body.email, req.body.password);
@@ -65,11 +69,14 @@ app.post('/login', async (req, res) => {
 })
 
 app.get('/sign-up', (req, res) => {
+
+
     return res.render('sign-up.html',{signUp: true, session: req.session});
 })
 
 
 app.post('/sign-up', (req, res) => {
+
     let name = req.body.name;
     let email = req.body.email;
     let phone = req.body.phone;
