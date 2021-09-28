@@ -1,5 +1,8 @@
+
 body {
   background-color: #15102E;
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
 }
 
 #dashboard-topbar {
@@ -74,7 +77,7 @@ body {
   margin-top: 5px;
 }
 
-#dashboard-sidebar a:hover, .active {
+#dashboard-sidebar a:hover {
   background-color: #2E2951;
 }
 
@@ -99,10 +102,18 @@ $sidebar-icons-margin-top: 5px;
   margin-top: 40px;
 }
 
+.button-frame:hover #sidebar-es {
+  background-image: url("../images/dashboard/leftbar_es_hover.svg");
+}
+
 #sidebar-co {
   @include sidebar-icons;
   background-image: url("../images/dashboard/leftbar_co.svg");
   margin-top: $sidebar-icons-margin-top;
+}
+
+.button-frame:hover #sidebar-co {
+  background-image: url("../images/dashboard/leftbar_co_hover.svg");
 }
 
 #sidebar-ind {
@@ -111,10 +122,18 @@ $sidebar-icons-margin-top: 5px;
   margin-top: $sidebar-icons-margin-top;
 }
 
+.button-frame:hover #sidebar-ind {
+  background-image: url("../images/dashboard/leftbar_ind_hover.svg");
+}
+
 #sidebar-val {
   @include sidebar-icons;
   background-image: url("../images/dashboard/leftbar_val.svg");
   margin-top: $sidebar-icons-margin-top;
+}
+
+.button-frame:hover #sidebar-val {
+  background-image: url("../images/dashboard/leftbar_val_hover.svg");
 }
 
 #sidebar-to {
@@ -123,10 +142,18 @@ $sidebar-icons-margin-top: 5px;
   margin-top: $sidebar-icons-margin-top;
 }
 
+.button-frame:hover #sidebar-to {
+  background-image: url("../images/dashboard/leftbar_to_hover.svg");
+}
+
 #sidebar-inputs {
   @include sidebar-icons;
   background-image: url("../images/dashboard/leftbar_inputs.svg");
   margin-top: $sidebar-icons-margin-top;
+}
+
+.button-frame:hover #sidebar-inputs {
+  background-image: url("../images/dashboard/leftbar_inputs_hover.svg");
 }
 
 #sidebar-export {
@@ -135,19 +162,65 @@ $sidebar-icons-margin-top: 5px;
   margin-top: $sidebar-icons-margin-top;
 }
 
+.button-frame:hover #sidebar-export {
+  background-image: url("../images/dashboard/leftbar_export_hover.svg");
+}
+
 #sidebar-qual {
   @include sidebar-icons;
   background-image: url("../images/dashboard/leftbar_qual.svg");
   margin-top: $sidebar-icons-margin-top;
 }
 
-#sidebar-content-frame {
+.button-frame:hover #sidebar-qual {
+  background-image: url("../images/dashboard/leftbar_qual_hover.svg");
+}
+
+.sidebar-content-frame {
   display: none;
   position: fixed;
   z-index: 2;
   left: 50px;
+  top: 0;
   height: 100%;
   width: 200px;
-  margin-top: -8px;
   background-color: #2E2951;
 }
+
+.sidebar-content-frame a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+.sidebar-content-frame a:hover {
+  color: #00fbab;
+}
+
+.button-frame:hover .sidebar-button {
+  background-color: #2E2951;
+}
+
+.sidebar-title {
+  margin: 0 0 20px 0;
+  padding: 6px;
+  width: 188px;
+  color: #00fbab;
+  border-bottom: 1px solid #00fbab;
+  transition-property: border-bottom-width;
+  transition-duration: 2s;
+}
+
+#dashboard-sidebar a:hover + div, .sidebar-content-frame:hover  {
+display: block;
+}
+
+
+
+
+
+
+
+
