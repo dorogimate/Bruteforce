@@ -6,12 +6,14 @@ body {
 
 #top-navigation-bar {
   overflow: hidden; }
-  #top-navigation-bar p {
-    float: left;
-    padding-left: 10px;
+  #top-navigation-bar #layout-company-name a p {
+    float: left !important;
+    padding-left: 20px;
+    padding-top: 7px;
     font-size: 17px;
-    cursor: default; }
-  #top-navigation-bar a {
+    cursor: pointer;
+    color: #00fbab; }
+  #top-navigation-bar #layout-links a {
     padding: 14px 30px;
     text-decoration: none;
     color: #00fbab;
@@ -21,9 +23,9 @@ body {
     transition: 0.5s;
     position: relative;
     float: right; }
-  #top-navigation-bar a:hover {
+  #top-navigation-bar #layout-links a:hover {
     text-decoration: none; }
-  #top-navigation-bar a::before {
+  #top-navigation-bar #layout-links a::before {
     content: "";
     position: absolute;
     display: block;
@@ -35,10 +37,10 @@ body {
     transform: scaleX(0);
     text-decoration: none;
     transition: transform 0.3s ease; }
-  #top-navigation-bar a:hover::before {
+  #top-navigation-bar #layout-links a:hover::before {
     transform: scaleX(1); }
-  #top-navigation-bar .linkSelected {
-    color: white; }
+  #top-navigation-bar #layout-links .link-selected {
+    color: white !important; }
 
 #footer {
   bottom: 0;
@@ -49,7 +51,18 @@ body {
   text-align: center;
   padding-top: 15px; }
   #footer #footer-company-name {
-    font-size: 18px; }
+    font-size: 18px;
+    margin-bottom: 10px; }
+    #footer #footer-company-name a {
+      text-decoration: none; }
+      #footer #footer-company-name a p {
+        color: #00fbab;
+        cursor: pointer;
+        font-size: 18px;
+        margin-bottom: 10px; }
+        #footer #footer-company-name a p #copyright-icon {
+          width: 8px;
+          margin-bottom: 5px; }
   #footer p i {
     size: 30px;
     color: #00fbab; }
@@ -61,6 +74,14 @@ body {
     border-bottom: 1px solid darkgrey;
     width: 85%;
     margin: 0 auto 10px; }
+    #footer section #facebook-icon {
+      width: 15px;
+      border-radius: 5px;
+      margin-right: 20px;
+      margin-bottom: 10px; }
+    #footer section #instagram-icon {
+      width: 17px;
+      margin-bottom: 10px; }
   #footer p {
     font-size: 12px; }
     #footer p a {
@@ -73,7 +94,8 @@ body {
       transition: 0.5s;
       position: relative; }
     #footer p a:hover {
-      text-decoration: none; }
+      text-decoration: none;
+      color: white !important; }
 
 #sign-up-form-container {
   margin: 0 auto;
@@ -159,3 +181,44 @@ body {
   height: 100px;
   margin-top: -100px;
   clear: both; }
+
+.error-message {
+  font-weight: bold;
+  font-size: xx-large;
+  margin-top: 30px;
+  text-align: center; }
+
+select {
+  background-color: #03034b;
+  color: white; }
+
+input#phone::-webkit-outer-spin-button,
+input#phone::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.loader {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #00fbab;
+  width: 14px;
+  height: 14px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite; }
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
