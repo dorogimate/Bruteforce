@@ -2,43 +2,60 @@ body {
   margin: 0;
   color: #00fbab;
   font-family: Calibri, sans-serif;
-  background: url("../images/home_bg.jpeg"); }
+  background: url("../images/home_bg.jpeg");
+}
 
 #top-navigation-bar {
-  overflow: hidden; }
-  #top-navigation-bar p {
-    float: left;
-    padding-left: 10px;
-    font-size: 17px;
-    cursor: default; }
-  #top-navigation-bar a {
-    padding: 14px 30px;
-    text-decoration: none;
-    color: #00fbab;
-    font-size: 13px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: 0.5s;
-    position: relative;
-    float: right; }
-  #top-navigation-bar a:hover {
-    text-decoration: none; }
-  #top-navigation-bar a::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #00fbab;
-    transform: scaleX(0);
-    text-decoration: none;
-    transition: transform 0.3s ease; }
-  #top-navigation-bar a:hover::before {
-    transform: scaleX(1); }
-  #top-navigation-bar .linkSelected {
-    color: white; }
+  overflow: hidden;
+}
+#top-navigation-bar #layout-company-name a p {
+  float: left !important;
+  padding-left: 20px;
+  padding-top: 7px;
+  font-size: 17px;
+  cursor: pointer;
+  color: #00fbab;
+}
+#top-navigation-bar a {
+  color: #2c87f0;
+}
+#top-navigation-bar a:visited {
+  color: #636;
+}
+#top-navigation-bar a:hover, #top-navigation-bar a:active, #top-navigation-bar a:focus {
+  color: #c33;
+}
+#top-navigation-bar #layout-links a {
+  padding: 14px 30px;
+  text-decoration: none;
+  color: #00fbab;
+  font-size: 13px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+  color: #00fbab;
+  float: right;
+}
+#top-navigation-bar #layout-links a:hover {
+  text-decoration: none;
+}
+#top-navigation-bar #layout-links a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00fbab;
+  transform: scaleX(0);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+#top-navigation-bar #layout-links a:hover::before {
+  transform: scaleX(1);
+}
 
 #footer {
   bottom: 0;
@@ -47,30 +64,65 @@ body {
   flex-shrink: 0;
   color: #00fbab;
   text-align: center;
-  padding-top: 15px; }
-  #footer #footer-company-name {
-    font-size: 18px; }
-  #footer p i {
-    size: 30px;
-    color: #00fbab; }
-  #footer i {
-    margin-right: 30px;
-    margin-bottom: 10px;
-    color: #00fbab; }
-  #footer section {
-    border-bottom: 1px solid darkgrey;
-    width: 85%;
-    margin: 0 auto 10px; }
-  #footer p {
-    font-size: 12px; }
-    #footer p a {
-      padding: 14px 14px;
-      text-decoration: none;
-      color: #00fbab;
-      font-size: 12px;
-      margin-top: 10px;
-      cursor: pointer;
-      transition: 0.5s;
-      position: relative; }
-    #footer p a:hover {
-      text-decoration: none; }
+  padding-top: 15px;
+}
+#footer #footer-company-name {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+#footer #footer-company-name a {
+  text-decoration: none;
+}
+#footer #footer-company-name a p {
+  color: #00fbab;
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+#footer #footer-company-name a p #copyright-icon {
+  width: 8px;
+  margin-bottom: 5px;
+}
+#footer p i {
+  size: 30px;
+  color: #00fbab;
+}
+#footer i {
+  margin-right: 30px;
+  margin-bottom: 10px;
+  color: #00fbab;
+}
+#footer section {
+  border-bottom: 1px solid darkgrey;
+  width: 85%;
+  margin: 0 auto 10px;
+}
+#footer section #facebook-icon {
+  width: 15px;
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+#footer section #instagram-icon {
+  width: 17px;
+  margin-bottom: 10px;
+}
+#footer p {
+  font-size: 12px;
+}
+#footer p a {
+  padding: 14px 14px;
+  text-decoration: none;
+  color: #00fbab;
+  font-size: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+}
+#footer p a:hover {
+  text-decoration: none;
+  color: white !important;
+}
+
+/*# sourceMappingURL=main.css.map */
