@@ -1,13 +1,14 @@
 {% extends "layout.html" %}
 
 {% block head %}
-<title>Bruteforce Analytics - Main page</title>
+<title>BA - Login page</title>
 <link rel="stylesheet" href="/style/login.css">
 {% endblock %}
 
 {% block body %}
 <div id="login-form-container">
     <p id="login-form-title">LOG IN</p>
+    <p class="error-message">{{ errorMessage }}</p>
     <div id="login-form">
         <form action="/login" method="post">
             <label for="email-address">Email address:</label><br>
@@ -20,4 +21,6 @@
     <a id="login-forgot" href="/login">Forgot my password</a>
     <a id="login-signup" href="/sign-up">Create an account</a>
 </div>
+
+
 {% endblock %}

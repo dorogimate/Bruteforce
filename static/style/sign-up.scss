@@ -57,8 +57,8 @@ html, body, #sign-up-form-container {
   //margin-top: 85px;
   //margin: 0 auto;
 
-    label {
-   // margin-top: 45px;
+  label {
+    // margin-top: 45px;
     font-size: 12px;
   }
 
@@ -101,5 +101,47 @@ html, body, #sign-up-form-container {
   height: 100px;
   margin-top: -100px;
   clear: both;
+}
+
+.error-message {
+  @include errorMessageFormatter;
+  text-align: center;
+}
+
+select {
+  background-color: #03034b;
+  color: white;
+}
+
+input#phone::-webkit-outer-spin-button ,
+input#phone::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+.loader {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid $greenTextColor;
+  width: 14px;
+  height: 14px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 

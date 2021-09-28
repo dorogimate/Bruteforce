@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/style/main.css">
-    <script src="/js/main.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="/js/main.js" defer></script>
     {% block head %}
         <title>Main page</title>
     {% endblock %}
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div id="top-navigation-bar">
-        <p>Bruteforce Analytics</p>
-        <a href="/help" {% if actualPage == 'help' %} class="linkSelected" {% endif %}>HELP</a>
-        <a href="/about-us" {% if actualPage == 'aboutus' %} class="linkSelected" {% endif %}>ABOUT US</a>
-        <a href="/sign-up" {% if actualPage == 'signup' %} class="linkSelected" {% endif %}>SIGN UP</a>
-        <a href="/login" {% if actualPage == 'login' %} class="linkSelected" {% endif %}>LOG IN</a>
+        <div id="layout-company-name"><a href="/"><p>Bruteforce Analytics</p></a></div>
+        <div id="layout-links">
+            <a class="layout-link {% if help %} link-selected {% endif %}" href="/help">HELP</a>
+            <a class="layout-link {% if aboutUs %} link-selected {% endif %}" href="/about-us">ABOUT US</a>
+            {% if session.name != null %}
+            <a class="layout-link" href="/logout">LOG OUT</a>
+            {% else %}
+            <a class="layout-link {% if signUp %} link-selected {% endif %}" href="/sign-up">SIGN UP</a>
+            <a class="layout-link {% if logIn %} link-selected {% endif %}" href="/login">LOG IN</a>
+            {% endif %}
+        </div>
+
     </div>
     {% block body %}
     {% endblock %}
 
     <div id="footer-container">
         <div id="footer">
-            <p id="footer-company-name">Bruteforce Analytics <i class="far fa-copyright"></i></p>
+            <div id="footer-company-name"><a href="/"><p>Bruteforce Analytics <sup><small>©</small></sup></p></a></div>
             <section>
-                <a href=""><i class="fab fa-facebook"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><img id="facebook-icon" src="/images/facebook-icon.png" alt="Facebook logo"></a>
+                <a href=""><img id="instagram-icon" src="/images/instagram-icon.png" alt="Instagram logo"></a>
             </section>
             <p>
                 Copyright © 2021 Bruteforce Inc. All rights reserved.
