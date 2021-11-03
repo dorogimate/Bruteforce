@@ -9,13 +9,13 @@ body {
   #top-navigation-bar p {
     float: left;
     padding-left: 10px;
-    font-size: 23px;
+    font-size: 17px;
     cursor: default; }
   #top-navigation-bar a {
     padding: 14px 30px;
     text-decoration: none;
     color: #00fbab;
-    font-size: 18px;
+    font-size: 13px;
     margin-top: 10px;
     cursor: pointer;
     transition: 0.5s;
@@ -37,6 +37,8 @@ body {
     transition: transform 0.3s ease; }
   #top-navigation-bar a:hover::before {
     transform: scaleX(1); }
+  #top-navigation-bar .linkSelected {
+    color: white; }
 
 #footer {
   bottom: 0;

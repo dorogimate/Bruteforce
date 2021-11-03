@@ -38,6 +38,12 @@ $fontFamily: Calibri, sans-serif;
   transform: scaleX(1);
 }
 
+@mixin errorMessageFormatter() {
+  font-weight: bold;
+  font-size: xx-large;
+  margin-top: 30px;
+}
+
 body {
   margin: 0;
   color: $greenTextColor;
@@ -51,11 +57,11 @@ body {
   p {
     float: left;
     padding-left: 10px;
-    font-size: 23px;
+    font-size: 17px;
     cursor: default;
   }
   a {
-    @include linkFormatter(18px, 14px, 30px);
+    @include linkFormatter(13px, 14px, 30px);
     float: right;
   }
   a:hover {
@@ -66,6 +72,9 @@ body {
   }
   a:hover::before {
     @include linkHoverBeforeFormatter
+  }
+  .linkSelected {
+    color: white;
   }
 }
 
